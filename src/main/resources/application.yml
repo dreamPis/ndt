@@ -34,6 +34,15 @@ spring:
     multipart:
       max-file-size: 1000MB
       max-request-size: 1000MB
+  security:
+    user:
+      name: root
+      password: 1234
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
 server:
   servlet:
     context-path: /sms
+
+
