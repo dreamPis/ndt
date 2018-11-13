@@ -1,5 +1,6 @@
 package com.ndt.sms.config;
 
+import com.ndt.sms.service.RedisAuthenticationCodeServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
@@ -10,11 +11,11 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.provider.code.AuthorizationCodeServices;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
-import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 
 /**
  * @Author ser7en
@@ -25,10 +26,18 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    private RedisConnectionFactory redisConnectionFactory;
+
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
+    }
+
+    @Bean
+    public AuthorizationCodeServices authorizationCodeServices(){
+        return new RedisAuthenticationCodeServices(redisConnectionFactory);
     }
 
     @Bean
@@ -56,12 +65,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        http.authorizeRequests().anyRequest().fullyAuthenticated();
+        http.authorizeRequests().anyRequest().fullyAuthenticated();
 //        http.formLogin().loginPage("/login").failureUrl("/login?error").permitAll();
-//        http.logout().permitAll();
-        http.httpBasic()
+        http.formLogin()          // 定义当需要用户登录时候，转到的登录页面。
                 .and()
-                .csrf()
-                .disable();
+                .authorizeRequests()    // 定义哪些URL需要被保护、哪些不需要被保护
+                .anyRequest()        // 任何请求,登录后可以访问
+                .authenticated();
+        http.logout().permitAll();
     }
 }

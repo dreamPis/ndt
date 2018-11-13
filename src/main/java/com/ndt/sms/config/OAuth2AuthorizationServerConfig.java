@@ -4,20 +4,21 @@ import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.oauth2.config.annotation.builders.InMemoryClientDetailsServiceBuilder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.code.AuthorizationCodeServices;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 
-import java.util.ArrayList;
+import javax.sql.DataSource;
 import java.util.List;
 
 /**
@@ -31,7 +32,11 @@ import java.util.List;
 public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
     @Autowired
+    private DataSource dataSource;
+    @Autowired
     private AuthenticationManager authenticationManager;
+    @Autowired
+    private AuthorizationCodeServices authorizationCodeServices;
     @Autowired
     private TokenStore tokenStore;
     @Autowired
@@ -41,12 +46,15 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
     @Qualifier("myUserDetailsService")
     @Autowired
     private UserDetailsService userDetailsService;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints.tokenStore(tokenStore)
                 .accessTokenConverter(jwtAccessTokenConverter)
                 .authenticationManager(authenticationManager)
+                .authorizationCodeServices(authorizationCodeServices)
                 .userDetailsService(userDetailsService);
         //扩展token返回结果
         if (jwtAccessTokenConverter != null && jwtTokenEnhancer != null) {
@@ -63,13 +71,17 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        InMemoryClientDetailsServiceBuilder builder = clients.inMemory();
-        builder.withClient("ndt")
-                .secret("ndt")
+        clients.jdbc(dataSource).withClient("ndt")
+                .secret(passwordEncoder.encode("ndt"))
                 .accessTokenValiditySeconds(7200)
                 .refreshTokenValiditySeconds(60 * 60 * 24)
                 .authorizedGrantTypes("refresh_token", "password", "authorization_code")
-                .redirectUris("http://www.ndtcd.cn/#/nindex")
+                .redirectUris("http://www.ndtcd.cn/")
                 .scopes("all");
+    }
+
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+        security.allowFormAuthenticationForClients();
     }
 }
