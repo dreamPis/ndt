@@ -41,7 +41,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TScoreTrace extends TableImpl<TScoreTraceRecord> {
 
-    private static final long serialVersionUID = -834669657;
+    private static final long serialVersionUID = -941073865;
 
     /**
      * The reference instance of <code>ndt.t_score_trace</code>
@@ -59,7 +59,7 @@ public class TScoreTrace extends TableImpl<TScoreTraceRecord> {
     /**
      * The column <code>ndt.t_score_trace.id</code>. 主键
      */
-    public final TableField<TScoreTraceRecord, Long> ID = createField("id", org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.field("nextval('ndt.seq1'::regclass)", org.jooq.impl.SQLDataType.BIGINT)), this, "主键");
+    public final TableField<TScoreTraceRecord, Long> ID = createField("id", org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.field("nextval('seq1'::regclass)", org.jooq.impl.SQLDataType.BIGINT)), this, "主键");
 
     /**
      * The column <code>ndt.t_score_trace.user_id</code>. 用户ID

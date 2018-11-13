@@ -7,6 +7,7 @@ package com.ndt.sms.entity.tables.pojos;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.Arrays;
 
 import javax.annotation.Generated;
 
@@ -24,24 +25,28 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class VillageCompanyWarrantPjo implements Serializable {
 
-    private static final long serialVersionUID = -1134401239;
+    private static final long serialVersionUID = -1492324715;
 
-    private BigDecimal id;
-    private BigDecimal villageCompanyInfoId;
-    private Integer    name;
-    private String     remark;
-    private String     code;
-    private String     grantTime;
-    private Boolean    isMortgage;
-    private String     mortgageTime;
-    private BigDecimal mortgageMoney;
-    private String     imgUrl;
-    private Integer    state;
-    private Short      status;
-    private BigDecimal createUser;
-    private Timestamp  createTime;
-    private BigDecimal updateUser;
-    private Timestamp  updateTime;
+    private BigDecimal   id;
+    private BigDecimal   villageCompanyInfoId;
+    private Integer      name;
+    private String       remark;
+    private String       code;
+    private String       grantTime;
+    private Boolean      isMortgage;
+    private String       mortgageTime;
+    private BigDecimal   mortgageMoney;
+    private String       imgUrl;
+    private Integer      state;
+    private Short        status;
+    private BigDecimal   createUser;
+    private Timestamp    createTime;
+    private BigDecimal   updateUser;
+    private Timestamp    updateTime;
+    private String       propertyRightArea;
+    private Boolean      isFreeze;
+    private BigDecimal[] imgCrops;
+    private BigDecimal[] propertyRightImgs;
 
     public VillageCompanyWarrantPjo() {}
 
@@ -62,25 +67,33 @@ public class VillageCompanyWarrantPjo implements Serializable {
         this.createTime = value.createTime;
         this.updateUser = value.updateUser;
         this.updateTime = value.updateTime;
+        this.propertyRightArea = value.propertyRightArea;
+        this.isFreeze = value.isFreeze;
+        this.imgCrops = value.imgCrops;
+        this.propertyRightImgs = value.propertyRightImgs;
     }
 
     public VillageCompanyWarrantPjo(
-        BigDecimal id,
-        BigDecimal villageCompanyInfoId,
-        Integer    name,
-        String     remark,
-        String     code,
-        String     grantTime,
-        Boolean    isMortgage,
-        String     mortgageTime,
-        BigDecimal mortgageMoney,
-        String     imgUrl,
-        Integer    state,
-        Short      status,
-        BigDecimal createUser,
-        Timestamp  createTime,
-        BigDecimal updateUser,
-        Timestamp  updateTime
+        BigDecimal   id,
+        BigDecimal   villageCompanyInfoId,
+        Integer      name,
+        String       remark,
+        String       code,
+        String       grantTime,
+        Boolean      isMortgage,
+        String       mortgageTime,
+        BigDecimal   mortgageMoney,
+        String       imgUrl,
+        Integer      state,
+        Short        status,
+        BigDecimal   createUser,
+        Timestamp    createTime,
+        BigDecimal   updateUser,
+        Timestamp    updateTime,
+        String       propertyRightArea,
+        Boolean      isFreeze,
+        BigDecimal[] imgCrops,
+        BigDecimal[] propertyRightImgs
     ) {
         this.id = id;
         this.villageCompanyInfoId = villageCompanyInfoId;
@@ -98,6 +111,10 @@ public class VillageCompanyWarrantPjo implements Serializable {
         this.createTime = createTime;
         this.updateUser = updateUser;
         this.updateTime = updateTime;
+        this.propertyRightArea = propertyRightArea;
+        this.isFreeze = isFreeze;
+        this.imgCrops = imgCrops;
+        this.propertyRightImgs = propertyRightImgs;
     }
 
     public BigDecimal getId() {
@@ -244,6 +261,42 @@ public class VillageCompanyWarrantPjo implements Serializable {
         return this;
     }
 
+    public String getPropertyRightArea() {
+        return this.propertyRightArea;
+    }
+
+    public VillageCompanyWarrantPjo setPropertyRightArea(String propertyRightArea) {
+        this.propertyRightArea = propertyRightArea;
+        return this;
+    }
+
+    public Boolean getIsFreeze() {
+        return this.isFreeze;
+    }
+
+    public VillageCompanyWarrantPjo setIsFreeze(Boolean isFreeze) {
+        this.isFreeze = isFreeze;
+        return this;
+    }
+
+    public BigDecimal[] getImgCrops() {
+        return this.imgCrops;
+    }
+
+    public VillageCompanyWarrantPjo setImgCrops(BigDecimal... imgCrops) {
+        this.imgCrops = imgCrops;
+        return this;
+    }
+
+    public BigDecimal[] getPropertyRightImgs() {
+        return this.propertyRightImgs;
+    }
+
+    public VillageCompanyWarrantPjo setPropertyRightImgs(BigDecimal... propertyRightImgs) {
+        this.propertyRightImgs = propertyRightImgs;
+        return this;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("VillageCompanyWarrantPjo (");
@@ -264,6 +317,10 @@ public class VillageCompanyWarrantPjo implements Serializable {
         sb.append(", ").append(createTime);
         sb.append(", ").append(updateUser);
         sb.append(", ").append(updateTime);
+        sb.append(", ").append(propertyRightArea);
+        sb.append(", ").append(isFreeze);
+        sb.append(", ").append(Arrays.toString(imgCrops));
+        sb.append(", ").append(Arrays.toString(propertyRightImgs));
 
         sb.append(")");
         return sb.toString();

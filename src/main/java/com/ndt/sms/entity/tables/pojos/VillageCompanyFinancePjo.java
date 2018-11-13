@@ -7,6 +7,7 @@ package com.ndt.sms.entity.tables.pojos;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.Arrays;
 
 import javax.annotation.Generated;
 
@@ -24,30 +25,31 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class VillageCompanyFinancePjo implements Serializable {
 
-    private static final long serialVersionUID = 435140695;
+    private static final long serialVersionUID = 1623077108;
 
-    private BigDecimal id;
-    private BigDecimal villageCompanyInfoId;
-    private String     calendarYear;
-    private BigDecimal incomeAmt;
-    private Integer    employeeNumber;
-    private String     financeData;
-    private BigDecimal totalAssetAmt;
-    private BigDecimal netAssetAmt;
-    private String     mainBusiness;
-    private BigDecimal mainBusinessAmt;
-    private BigDecimal netProfitAmt;
-    private BigDecimal grossProfitAmt;
-    private BigDecimal taxAmt;
-    private BigDecimal debtAmt;
-    private BigDecimal loanBalance;
-    private Integer    creditorNumber;
-    private String     ownerEquity;
-    private Short      status;
-    private BigDecimal createUser;
-    private Timestamp  createTime;
-    private BigDecimal updateUser;
-    private Timestamp  updateTime;
+    private BigDecimal   id;
+    private BigDecimal   villageCompanyInfoId;
+    private String       calendarYear;
+    private BigDecimal   incomeAmt;
+    private Integer      employeeNumber;
+    private String       financeData;
+    private BigDecimal   totalAssetAmt;
+    private BigDecimal   netAssetAmt;
+    private String       mainBusiness;
+    private BigDecimal   mainBusinessAmt;
+    private BigDecimal   netProfitAmt;
+    private BigDecimal   grossProfitAmt;
+    private BigDecimal   taxAmt;
+    private BigDecimal   debtAmt;
+    private BigDecimal   loanBalance;
+    private Integer      creditorNumber;
+    private String       ownerEquity;
+    private Short        status;
+    private BigDecimal   createUser;
+    private Timestamp    createTime;
+    private BigDecimal   updateUser;
+    private Timestamp    updateTime;
+    private BigDecimal[] financeImg;
 
     public VillageCompanyFinancePjo() {}
 
@@ -74,31 +76,33 @@ public class VillageCompanyFinancePjo implements Serializable {
         this.createTime = value.createTime;
         this.updateUser = value.updateUser;
         this.updateTime = value.updateTime;
+        this.financeImg = value.financeImg;
     }
 
     public VillageCompanyFinancePjo(
-        BigDecimal id,
-        BigDecimal villageCompanyInfoId,
-        String     calendarYear,
-        BigDecimal incomeAmt,
-        Integer    employeeNumber,
-        String     financeData,
-        BigDecimal totalAssetAmt,
-        BigDecimal netAssetAmt,
-        String     mainBusiness,
-        BigDecimal mainBusinessAmt,
-        BigDecimal netProfitAmt,
-        BigDecimal grossProfitAmt,
-        BigDecimal taxAmt,
-        BigDecimal debtAmt,
-        BigDecimal loanBalance,
-        Integer    creditorNumber,
-        String     ownerEquity,
-        Short      status,
-        BigDecimal createUser,
-        Timestamp  createTime,
-        BigDecimal updateUser,
-        Timestamp  updateTime
+        BigDecimal   id,
+        BigDecimal   villageCompanyInfoId,
+        String       calendarYear,
+        BigDecimal   incomeAmt,
+        Integer      employeeNumber,
+        String       financeData,
+        BigDecimal   totalAssetAmt,
+        BigDecimal   netAssetAmt,
+        String       mainBusiness,
+        BigDecimal   mainBusinessAmt,
+        BigDecimal   netProfitAmt,
+        BigDecimal   grossProfitAmt,
+        BigDecimal   taxAmt,
+        BigDecimal   debtAmt,
+        BigDecimal   loanBalance,
+        Integer      creditorNumber,
+        String       ownerEquity,
+        Short        status,
+        BigDecimal   createUser,
+        Timestamp    createTime,
+        BigDecimal   updateUser,
+        Timestamp    updateTime,
+        BigDecimal[] financeImg
     ) {
         this.id = id;
         this.villageCompanyInfoId = villageCompanyInfoId;
@@ -122,6 +126,7 @@ public class VillageCompanyFinancePjo implements Serializable {
         this.createTime = createTime;
         this.updateUser = updateUser;
         this.updateTime = updateTime;
+        this.financeImg = financeImg;
     }
 
     public BigDecimal getId() {
@@ -322,6 +327,15 @@ public class VillageCompanyFinancePjo implements Serializable {
         return this;
     }
 
+    public BigDecimal[] getFinanceImg() {
+        return this.financeImg;
+    }
+
+    public VillageCompanyFinancePjo setFinanceImg(BigDecimal... financeImg) {
+        this.financeImg = financeImg;
+        return this;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("VillageCompanyFinancePjo (");
@@ -348,6 +362,7 @@ public class VillageCompanyFinancePjo implements Serializable {
         sb.append(", ").append(createTime);
         sb.append(", ").append(updateUser);
         sb.append(", ").append(updateTime);
+        sb.append(", ").append(Arrays.toString(financeImg));
 
         sb.append(")");
         return sb.toString();

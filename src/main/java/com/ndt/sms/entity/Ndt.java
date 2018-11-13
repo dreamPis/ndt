@@ -33,15 +33,24 @@ import com.ndt.sms.entity.tables.CAdminDivision;
 import com.ndt.sms.entity.tables.CDictMapping;
 import com.ndt.sms.entity.tables.CDictType;
 import com.ndt.sms.entity.tables.CSensitiveWords;
+import com.ndt.sms.entity.tables.Clientdetails;
 import com.ndt.sms.entity.tables.MtMessageAccepter;
 import com.ndt.sms.entity.tables.MtRoleMenu;
 import com.ndt.sms.entity.tables.MtUserRole;
+import com.ndt.sms.entity.tables.OauthAccessToken;
+import com.ndt.sms.entity.tables.OauthApprovals;
+import com.ndt.sms.entity.tables.OauthClientDetails;
+import com.ndt.sms.entity.tables.OauthClientToken;
+import com.ndt.sms.entity.tables.OauthCode;
+import com.ndt.sms.entity.tables.OauthRefreshToken;
 import com.ndt.sms.entity.tables.TAdvert;
 import com.ndt.sms.entity.tables.TAdvertBak;
+import com.ndt.sms.entity.tables.TAppVersion;
 import com.ndt.sms.entity.tables.TBanner;
 import com.ndt.sms.entity.tables.TBannerBak;
 import com.ndt.sms.entity.tables.TBannerModel;
 import com.ndt.sms.entity.tables.TBusinessResource;
+import com.ndt.sms.entity.tables.TButtonForm;
 import com.ndt.sms.entity.tables.TCollection;
 import com.ndt.sms.entity.tables.TCompanyDetail;
 import com.ndt.sms.entity.tables.TCompanyDetailPrecheck;
@@ -113,6 +122,7 @@ import com.ndt.sms.entity.tables.TPolicy;
 import com.ndt.sms.entity.tables.TPolicyService;
 import com.ndt.sms.entity.tables.TPolicyServiceApply;
 import com.ndt.sms.entity.tables.TPolicyServiceMaterial;
+import com.ndt.sms.entity.tables.TPolicyServiceRadix;
 import com.ndt.sms.entity.tables.TPolicyServiceSync;
 import com.ndt.sms.entity.tables.TProfessionAgent;
 import com.ndt.sms.entity.tables.TPropertyRightsTrading;
@@ -137,6 +147,8 @@ import com.ndt.sms.entity.tables.TSms;
 import com.ndt.sms.entity.tables.TStandardRate;
 import com.ndt.sms.entity.tables.TStaticSource;
 import com.ndt.sms.entity.tables.TStaticSourceBak;
+import com.ndt.sms.entity.tables.TStepBase;
+import com.ndt.sms.entity.tables.TStepButton;
 import com.ndt.sms.entity.tables.TTermBase;
 import com.ndt.sms.entity.tables.TThirdUser;
 import com.ndt.sms.entity.tables.TUser;
@@ -145,19 +157,24 @@ import com.ndt.sms.entity.tables.TUserCredittaskLog;
 import com.ndt.sms.entity.tables.TUserInfoDetail;
 import com.ndt.sms.entity.tables.TUserPropertyright;
 import com.ndt.sms.entity.tables.TVillageCompanyBaseinfo;
+import com.ndt.sms.entity.tables.TVillageCompanyBusiness;
 import com.ndt.sms.entity.tables.TVillageCompanyCredit;
 import com.ndt.sms.entity.tables.TVillageCompanyDetail;
+import com.ndt.sms.entity.tables.TVillageCompanyEmployment;
 import com.ndt.sms.entity.tables.TVillageCompanyEvaluation;
 import com.ndt.sms.entity.tables.TVillageCompanyFinance;
 import com.ndt.sms.entity.tables.TVillageCompanyHonor;
 import com.ndt.sms.entity.tables.TVillageCompanyInsurance;
 import com.ndt.sms.entity.tables.TVillageCompanyInvestment;
 import com.ndt.sms.entity.tables.TVillageCompanyKnowledge;
+import com.ndt.sms.entity.tables.TVillageCompanyLoan;
 import com.ndt.sms.entity.tables.TVillageCompanyManagement;
 import com.ndt.sms.entity.tables.TVillageCompanyPatent;
 import com.ndt.sms.entity.tables.TVillageCompanyPayment;
 import com.ndt.sms.entity.tables.TVillageCompanyPurchase;
 import com.ndt.sms.entity.tables.TVillageCompanyReward;
+import com.ndt.sms.entity.tables.TVillageCompanySales;
+import com.ndt.sms.entity.tables.TVillageCompanySubsidy;
 import com.ndt.sms.entity.tables.TVillageCompanyWarrant;
 import com.ndt.sms.entity.tables.TVillagePersonalAwardsPunishments;
 import com.ndt.sms.entity.tables.TVillagePersonalBaseinfo;
@@ -202,7 +219,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Ndt extends SchemaImpl {
 
-    private static final long serialVersionUID = 891570996;
+    private static final long serialVersionUID = -1157581332;
 
     /**
      * The reference instance of <code>ndt</code>
@@ -355,6 +372,11 @@ public class Ndt extends SchemaImpl {
     public final CSensitiveWords C_SENSITIVE_WORDS = com.ndt.sms.entity.tables.CSensitiveWords.C_SENSITIVE_WORDS;
 
     /**
+     * The table <code>ndt.clientdetails</code>.
+     */
+    public final Clientdetails CLIENTDETAILS = com.ndt.sms.entity.tables.Clientdetails.CLIENTDETAILS;
+
+    /**
      * 消息接收者表
      */
     public final MtMessageAccepter MT_MESSAGE_ACCEPTER = com.ndt.sms.entity.tables.MtMessageAccepter.MT_MESSAGE_ACCEPTER;
@@ -370,6 +392,36 @@ public class Ndt extends SchemaImpl {
     public final MtUserRole MT_USER_ROLE = com.ndt.sms.entity.tables.MtUserRole.MT_USER_ROLE;
 
     /**
+     * The table <code>ndt.oauth_access_token</code>.
+     */
+    public final OauthAccessToken OAUTH_ACCESS_TOKEN = com.ndt.sms.entity.tables.OauthAccessToken.OAUTH_ACCESS_TOKEN;
+
+    /**
+     * The table <code>ndt.oauth_approvals</code>.
+     */
+    public final OauthApprovals OAUTH_APPROVALS = com.ndt.sms.entity.tables.OauthApprovals.OAUTH_APPROVALS;
+
+    /**
+     * The table <code>ndt.oauth_client_details</code>.
+     */
+    public final OauthClientDetails OAUTH_CLIENT_DETAILS = com.ndt.sms.entity.tables.OauthClientDetails.OAUTH_CLIENT_DETAILS;
+
+    /**
+     * The table <code>ndt.oauth_client_token</code>.
+     */
+    public final OauthClientToken OAUTH_CLIENT_TOKEN = com.ndt.sms.entity.tables.OauthClientToken.OAUTH_CLIENT_TOKEN;
+
+    /**
+     * The table <code>ndt.oauth_code</code>.
+     */
+    public final OauthCode OAUTH_CODE = com.ndt.sms.entity.tables.OauthCode.OAUTH_CODE;
+
+    /**
+     * The table <code>ndt.oauth_refresh_token</code>.
+     */
+    public final OauthRefreshToken OAUTH_REFRESH_TOKEN = com.ndt.sms.entity.tables.OauthRefreshToken.OAUTH_REFRESH_TOKEN;
+
+    /**
      * 散叶广告表
      */
     public final TAdvert T_ADVERT = com.ndt.sms.entity.tables.TAdvert.T_ADVERT;
@@ -378,6 +430,11 @@ public class Ndt extends SchemaImpl {
      * 散叶广告表
      */
     public final TAdvertBak T_ADVERT_BAK = com.ndt.sms.entity.tables.TAdvertBak.T_ADVERT_BAK;
+
+    /**
+     * APP版本管理
+     */
+    public final TAppVersion T_APP_VERSION = com.ndt.sms.entity.tables.TAppVersion.T_APP_VERSION;
 
     /**
      * t_banner
@@ -398,6 +455,11 @@ public class Ndt extends SchemaImpl {
      * 业务资源表
      */
     public final TBusinessResource T_BUSINESS_RESOURCE = com.ndt.sms.entity.tables.TBusinessResource.T_BUSINESS_RESOURCE;
+
+    /**
+     * 表单属性
+     */
+    public final TButtonForm T_BUTTON_FORM = com.ndt.sms.entity.tables.TButtonForm.T_BUTTON_FORM;
 
     /**
      * The table <code>ndt.t_collection</code>.
@@ -755,6 +817,11 @@ public class Ndt extends SchemaImpl {
     public final TPolicyServiceMaterial T_POLICY_SERVICE_MATERIAL = com.ndt.sms.entity.tables.TPolicyServiceMaterial.T_POLICY_SERVICE_MATERIAL;
 
     /**
+     * 政策申办统计基数
+     */
+    public final TPolicyServiceRadix T_POLICY_SERVICE_RADIX = com.ndt.sms.entity.tables.TPolicyServiceRadix.T_POLICY_SERVICE_RADIX;
+
+    /**
      * 政策服务流程处理
      */
     public final TPolicyServiceSync T_POLICY_SERVICE_SYNC = com.ndt.sms.entity.tables.TPolicyServiceSync.T_POLICY_SERVICE_SYNC;
@@ -875,6 +942,16 @@ public class Ndt extends SchemaImpl {
     public final TStaticSourceBak T_STATIC_SOURCE_BAK = com.ndt.sms.entity.tables.TStaticSourceBak.T_STATIC_SOURCE_BAK;
 
     /**
+     * 步骤主表
+     */
+    public final TStepBase T_STEP_BASE = com.ndt.sms.entity.tables.TStepBase.T_STEP_BASE;
+
+    /**
+     * 步骤操作按钮
+     */
+    public final TStepButton T_STEP_BUTTON = com.ndt.sms.entity.tables.TStepButton.T_STEP_BUTTON;
+
+    /**
      * 项目大类型
      */
     public final TTermBase T_TERM_BASE = com.ndt.sms.entity.tables.TTermBase.T_TERM_BASE;
@@ -915,6 +992,11 @@ public class Ndt extends SchemaImpl {
     public final TVillageCompanyBaseinfo T_VILLAGE_COMPANY_BASEINFO = com.ndt.sms.entity.tables.TVillageCompanyBaseinfo.T_VILLAGE_COMPANY_BASEINFO;
 
     /**
+     * 村站采集的公司经营信息
+     */
+    public final TVillageCompanyBusiness T_VILLAGE_COMPANY_BUSINESS = com.ndt.sms.entity.tables.TVillageCompanyBusiness.T_VILLAGE_COMPANY_BUSINESS;
+
+    /**
      * 村站采集的公司信用称号信息
      */
     public final TVillageCompanyCredit T_VILLAGE_COMPANY_CREDIT = com.ndt.sms.entity.tables.TVillageCompanyCredit.T_VILLAGE_COMPANY_CREDIT;
@@ -923,6 +1005,11 @@ public class Ndt extends SchemaImpl {
      * 村站采集的公司信息
      */
     public final TVillageCompanyDetail T_VILLAGE_COMPANY_DETAIL = com.ndt.sms.entity.tables.TVillageCompanyDetail.T_VILLAGE_COMPANY_DETAIL;
+
+    /**
+     * 村站采集的公司用工信息
+     */
+    public final TVillageCompanyEmployment T_VILLAGE_COMPANY_EMPLOYMENT = com.ndt.sms.entity.tables.TVillageCompanyEmployment.T_VILLAGE_COMPANY_EMPLOYMENT;
 
     /**
      * 村站采集的公司信用评价信息
@@ -955,6 +1042,11 @@ public class Ndt extends SchemaImpl {
     public final TVillageCompanyKnowledge T_VILLAGE_COMPANY_KNOWLEDGE = com.ndt.sms.entity.tables.TVillageCompanyKnowledge.T_VILLAGE_COMPANY_KNOWLEDGE;
 
     /**
+     * 村站采集的公司贷款信息
+     */
+    public final TVillageCompanyLoan T_VILLAGE_COMPANY_LOAN = com.ndt.sms.entity.tables.TVillageCompanyLoan.T_VILLAGE_COMPANY_LOAN;
+
+    /**
      * 村站采集的公司经营状况表
      */
     public final TVillageCompanyManagement T_VILLAGE_COMPANY_MANAGEMENT = com.ndt.sms.entity.tables.TVillageCompanyManagement.T_VILLAGE_COMPANY_MANAGEMENT;
@@ -978,6 +1070,16 @@ public class Ndt extends SchemaImpl {
      * 村站采集的公司奖励/处罚信息
      */
     public final TVillageCompanyReward T_VILLAGE_COMPANY_REWARD = com.ndt.sms.entity.tables.TVillageCompanyReward.T_VILLAGE_COMPANY_REWARD;
+
+    /**
+     * 村站采集的公司销售信息
+     */
+    public final TVillageCompanySales T_VILLAGE_COMPANY_SALES = com.ndt.sms.entity.tables.TVillageCompanySales.T_VILLAGE_COMPANY_SALES;
+
+    /**
+     * 村站采集的公司政府补贴信息
+     */
+    public final TVillageCompanySubsidy T_VILLAGE_COMPANY_SUBSIDY = com.ndt.sms.entity.tables.TVillageCompanySubsidy.T_VILLAGE_COMPANY_SUBSIDY;
 
     /**
      * 村站采集的公司权证信息
@@ -1096,13 +1198,13 @@ public class Ndt extends SchemaImpl {
         return Arrays.<Sequence<?>>asList(
             Sequences.ACT_EVT_LOG_LOG_NR__SEQ,
             Sequences.SEQ1,
-            Sequences.T_RISKS_SHARE_ID_SEQ,
-            Sequences.T_RISKS_SHARE_TRACE_ID_SEQ,
             Sequences.TB_FARM0_COPY_DATE,
             Sequences.TB_INFO_COPY_DATE,
             Sequences.TB_LOAN_DONE_RECORD_SEQ,
             Sequences.TB_MAJOR_SEQ,
-            Sequences.TB_USER_DETAIL_ID_SEQ);
+            Sequences.TB_USER_DETAIL_ID_SEQ,
+            Sequences.T_RISKS_SHARE_ID_SEQ,
+            Sequences.T_RISKS_SHARE_TRACE_ID_SEQ);
     }
 
     @Override
@@ -1143,15 +1245,24 @@ public class Ndt extends SchemaImpl {
             CDictMapping.C_DICT_MAPPING,
             CDictType.C_DICT_TYPE,
             CSensitiveWords.C_SENSITIVE_WORDS,
+            Clientdetails.CLIENTDETAILS,
             MtMessageAccepter.MT_MESSAGE_ACCEPTER,
             MtRoleMenu.MT_ROLE_MENU,
             MtUserRole.MT_USER_ROLE,
+            OauthAccessToken.OAUTH_ACCESS_TOKEN,
+            OauthApprovals.OAUTH_APPROVALS,
+            OauthClientDetails.OAUTH_CLIENT_DETAILS,
+            OauthClientToken.OAUTH_CLIENT_TOKEN,
+            OauthCode.OAUTH_CODE,
+            OauthRefreshToken.OAUTH_REFRESH_TOKEN,
             TAdvert.T_ADVERT,
             TAdvertBak.T_ADVERT_BAK,
+            TAppVersion.T_APP_VERSION,
             TBanner.T_BANNER,
             TBannerBak.T_BANNER_BAK,
             TBannerModel.T_BANNER_MODEL,
             TBusinessResource.T_BUSINESS_RESOURCE,
+            TButtonForm.T_BUTTON_FORM,
             TCollection.T_COLLECTION,
             TCompanyDetail.T_COMPANY_DETAIL,
             TCompanyDetailPrecheck.T_COMPANY_DETAIL_PRECHECK,
@@ -1223,6 +1334,7 @@ public class Ndt extends SchemaImpl {
             TPolicyService.T_POLICY_SERVICE,
             TPolicyServiceApply.T_POLICY_SERVICE_APPLY,
             TPolicyServiceMaterial.T_POLICY_SERVICE_MATERIAL,
+            TPolicyServiceRadix.T_POLICY_SERVICE_RADIX,
             TPolicyServiceSync.T_POLICY_SERVICE_SYNC,
             TProfessionAgent.T_PROFESSION_AGENT,
             TPropertyRightsTrading.T_PROPERTY_RIGHTS_TRADING,
@@ -1247,6 +1359,8 @@ public class Ndt extends SchemaImpl {
             TStandardRate.T_STANDARD_RATE,
             TStaticSource.T_STATIC_SOURCE,
             TStaticSourceBak.T_STATIC_SOURCE_BAK,
+            TStepBase.T_STEP_BASE,
+            TStepButton.T_STEP_BUTTON,
             TTermBase.T_TERM_BASE,
             TThirdUser.T_THIRD_USER,
             TUser.T_USER,
@@ -1255,19 +1369,24 @@ public class Ndt extends SchemaImpl {
             TUserInfoDetail.T_USER_INFO_DETAIL,
             TUserPropertyright.T_USER_PROPERTYRIGHT,
             TVillageCompanyBaseinfo.T_VILLAGE_COMPANY_BASEINFO,
+            TVillageCompanyBusiness.T_VILLAGE_COMPANY_BUSINESS,
             TVillageCompanyCredit.T_VILLAGE_COMPANY_CREDIT,
             TVillageCompanyDetail.T_VILLAGE_COMPANY_DETAIL,
+            TVillageCompanyEmployment.T_VILLAGE_COMPANY_EMPLOYMENT,
             TVillageCompanyEvaluation.T_VILLAGE_COMPANY_EVALUATION,
             TVillageCompanyFinance.T_VILLAGE_COMPANY_FINANCE,
             TVillageCompanyHonor.T_VILLAGE_COMPANY_HONOR,
             TVillageCompanyInsurance.T_VILLAGE_COMPANY_INSURANCE,
             TVillageCompanyInvestment.T_VILLAGE_COMPANY_INVESTMENT,
             TVillageCompanyKnowledge.T_VILLAGE_COMPANY_KNOWLEDGE,
+            TVillageCompanyLoan.T_VILLAGE_COMPANY_LOAN,
             TVillageCompanyManagement.T_VILLAGE_COMPANY_MANAGEMENT,
             TVillageCompanyPatent.T_VILLAGE_COMPANY_PATENT,
             TVillageCompanyPayment.T_VILLAGE_COMPANY_PAYMENT,
             TVillageCompanyPurchase.T_VILLAGE_COMPANY_PURCHASE,
             TVillageCompanyReward.T_VILLAGE_COMPANY_REWARD,
+            TVillageCompanySales.T_VILLAGE_COMPANY_SALES,
+            TVillageCompanySubsidy.T_VILLAGE_COMPANY_SUBSIDY,
             TVillageCompanyWarrant.T_VILLAGE_COMPANY_WARRANT,
             TVillagePersonalAwardsPunishments.T_VILLAGE_PERSONAL_AWARDS_PUNISHMENTS,
             TVillagePersonalBaseinfo.T_VILLAGE_PERSONAL_BASEINFO,

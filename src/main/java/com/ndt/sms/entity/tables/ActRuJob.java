@@ -16,6 +16,7 @@ import java.util.List;
 import javax.annotation.Generated;
 
 import org.jooq.Field;
+import org.jooq.ForeignKey;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Schema;
@@ -39,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class ActRuJob extends TableImpl<ActRuJobRecord> {
 
-    private static final long serialVersionUID = -1575625504;
+    private static final long serialVersionUID = -1880253417;
 
     /**
      * The reference instance of <code>ndt.act_ru_job</code>
@@ -198,6 +199,14 @@ public class ActRuJob extends TableImpl<ActRuJobRecord> {
     @Override
     public List<UniqueKey<ActRuJobRecord>> getKeys() {
         return Arrays.<UniqueKey<ActRuJobRecord>>asList(Keys.ACT_RU_JOB_PKEY);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<ForeignKey<ActRuJobRecord, ?>> getReferences() {
+        return Arrays.<ForeignKey<ActRuJobRecord, ?>>asList(Keys.ACT_RU_JOB__ACT_FK_JOB_EXCEPTION);
     }
 
     /**

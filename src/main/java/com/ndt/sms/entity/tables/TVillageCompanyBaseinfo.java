@@ -40,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TVillageCompanyBaseinfo extends TableImpl<TVillageCompanyBaseinfoRecord> {
 
-    private static final long serialVersionUID = -1748126688;
+    private static final long serialVersionUID = 185259701;
 
     /**
      * The reference instance of <code>ndt.t_village_company_baseinfo</code>
@@ -249,6 +249,22 @@ public class TVillageCompanyBaseinfo extends TableImpl<TVillageCompanyBaseinfoRe
      * The column <code>ndt.t_village_company_baseinfo.update_time</code>.
      */
     public final TableField<TVillageCompanyBaseinfoRecord, Timestamp> UPDATE_TIME = createField("update_time", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
+
+    /**
+     * The column <code>ndt.t_village_company_baseinfo.document_path</code>. 证件照片
+     */
+    public final TableField<TVillageCompanyBaseinfoRecord, BigDecimal[]> DOCUMENT_PATH = createField("document_path", org.jooq.impl.SQLDataType.NUMERIC.getArrayDataType(), this, "证件照片");
+
+    /**
+     * @deprecated Unknown data type. Please define an explicit {@link org.jooq.Binding} to specify how this type should be handled. Deprecation can be turned off using <deprecationOnUnknownTypes/> in your code generator configuration.
+     */
+    @java.lang.Deprecated
+    public final TableField<TVillageCompanyBaseinfoRecord, Object> COMPANY_TYPE_INFO = createField("company_type_info", org.jooq.impl.SQLDataType.OTHER, this, "企业类型");
+
+    /**
+     * The column <code>ndt.t_village_company_baseinfo.remark</code>. 村站采集人员评价
+     */
+    public final TableField<TVillageCompanyBaseinfoRecord, String> REMARK = createField("remark", org.jooq.impl.SQLDataType.CLOB, this, "村站采集人员评价");
 
     /**
      * Create a <code>ndt.t_village_company_baseinfo</code> table reference

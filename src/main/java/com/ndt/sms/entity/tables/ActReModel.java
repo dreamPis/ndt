@@ -16,6 +16,7 @@ import java.util.List;
 import javax.annotation.Generated;
 
 import org.jooq.Field;
+import org.jooq.ForeignKey;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Schema;
@@ -39,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class ActReModel extends TableImpl<ActReModelRecord> {
 
-    private static final long serialVersionUID = -1143937618;
+    private static final long serialVersionUID = 907199786;
 
     /**
      * The reference instance of <code>ndt.act_re_model</code>
@@ -178,6 +179,14 @@ public class ActReModel extends TableImpl<ActReModelRecord> {
     @Override
     public List<UniqueKey<ActReModelRecord>> getKeys() {
         return Arrays.<UniqueKey<ActReModelRecord>>asList(Keys.ACT_RE_MODEL_PKEY);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<ForeignKey<ActReModelRecord, ?>> getReferences() {
+        return Arrays.<ForeignKey<ActReModelRecord, ?>>asList(Keys.ACT_RE_MODEL__ACT_FK_MODEL_DEPLOYMENT, Keys.ACT_RE_MODEL__ACT_FK_MODEL_SOURCE, Keys.ACT_RE_MODEL__ACT_FK_MODEL_SOURCE_EXTRA);
     }
 
     /**

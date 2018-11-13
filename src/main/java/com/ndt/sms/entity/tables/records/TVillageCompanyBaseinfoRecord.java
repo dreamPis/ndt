@@ -28,7 +28,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TVillageCompanyBaseinfoRecord extends UpdatableRecordImpl<TVillageCompanyBaseinfoRecord> {
 
-    private static final long serialVersionUID = -1879126375;
+    private static final long serialVersionUID = 418174935;
 
     /**
      * Setter for <code>ndt.t_village_company_baseinfo.id</code>.
@@ -615,6 +615,53 @@ public class TVillageCompanyBaseinfoRecord extends UpdatableRecordImpl<TVillageC
         return (Timestamp) get(38);
     }
 
+    /**
+     * Setter for <code>ndt.t_village_company_baseinfo.document_path</code>. 证件照片
+     */
+    public TVillageCompanyBaseinfoRecord setDocumentPath(BigDecimal... value) {
+        set(39, value);
+        return this;
+    }
+
+    /**
+     * Getter for <code>ndt.t_village_company_baseinfo.document_path</code>. 证件照片
+     */
+    public BigDecimal[] getDocumentPath() {
+        return (BigDecimal[]) get(39);
+    }
+
+    /**
+     * @deprecated Unknown data type. Please define an explicit {@link org.jooq.Binding} to specify how this type should be handled. Deprecation can be turned off using <deprecationOnUnknownTypes/> in your code generator configuration.
+     */
+    @java.lang.Deprecated
+    public TVillageCompanyBaseinfoRecord setCompanyTypeInfo(Object value) {
+        set(40, value);
+        return this;
+    }
+
+    /**
+     * @deprecated Unknown data type. Please define an explicit {@link org.jooq.Binding} to specify how this type should be handled. Deprecation can be turned off using <deprecationOnUnknownTypes/> in your code generator configuration.
+     */
+    @java.lang.Deprecated
+    public Object getCompanyTypeInfo() {
+        return get(40);
+    }
+
+    /**
+     * Setter for <code>ndt.t_village_company_baseinfo.remark</code>. 村站采集人员评价
+     */
+    public TVillageCompanyBaseinfoRecord setRemark(String value) {
+        set(41, value);
+        return this;
+    }
+
+    /**
+     * Getter for <code>ndt.t_village_company_baseinfo.remark</code>. 村站采集人员评价
+     */
+    public String getRemark() {
+        return (String) get(41);
+    }
+
     // -------------------------------------------------------------------------
     // Primary key information
     // -------------------------------------------------------------------------
@@ -641,7 +688,7 @@ public class TVillageCompanyBaseinfoRecord extends UpdatableRecordImpl<TVillageC
     /**
      * Create a detached, initialised TVillageCompanyBaseinfoRecord
      */
-    public TVillageCompanyBaseinfoRecord(BigDecimal id, Integer certificateType, String name, String code, String address, Integer companyType, Integer productionType, Integer memberTotal, BigDecimal divisionId, Integer industryType, Timestamp setupTime, String businessScope, BigDecimal businessSize, Integer businessSizeUnit, BigDecimal businessIncome, String businessIncomeUnit, Timestamp businessDeadline, String registeredCapital, Boolean isEmerging, String legalPerson, String legalPersonIdentityId, String legalPersonPhone, Timestamp legalPersonIdDeadline, String relatedImgUrls, Integer workerTotal, String workerTime, String workerMoney, Integer socialMorality, String operatingHistory, Integer operationSituation, Boolean isCourtBlacklist, Boolean isBusinessBlacklist, Boolean isCourtEnforcement, Integer state, Short status, BigDecimal createUser, Timestamp createTime, BigDecimal updateUser, Timestamp updateTime) {
+    public TVillageCompanyBaseinfoRecord(BigDecimal id, Integer certificateType, String name, String code, String address, Integer companyType, Integer productionType, Integer memberTotal, BigDecimal divisionId, Integer industryType, Timestamp setupTime, String businessScope, BigDecimal businessSize, Integer businessSizeUnit, BigDecimal businessIncome, String businessIncomeUnit, Timestamp businessDeadline, String registeredCapital, Boolean isEmerging, String legalPerson, String legalPersonIdentityId, String legalPersonPhone, Timestamp legalPersonIdDeadline, String relatedImgUrls, Integer workerTotal, String workerTime, String workerMoney, Integer socialMorality, String operatingHistory, Integer operationSituation, Boolean isCourtBlacklist, Boolean isBusinessBlacklist, Boolean isCourtEnforcement, Integer state, Short status, BigDecimal createUser, Timestamp createTime, BigDecimal updateUser, Timestamp updateTime, BigDecimal[] documentPath, Object companyTypeInfo, String remark) {
         super(TVillageCompanyBaseinfo.T_VILLAGE_COMPANY_BASEINFO);
 
         set(0, id);
@@ -683,5 +730,8 @@ public class TVillageCompanyBaseinfoRecord extends UpdatableRecordImpl<TVillageC
         set(36, createTime);
         set(37, updateUser);
         set(38, updateTime);
+        set(39, documentPath);
+        set(40, companyTypeInfo);
+        set(41, remark);
     }
 }

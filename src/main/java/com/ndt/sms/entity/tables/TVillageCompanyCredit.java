@@ -40,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TVillageCompanyCredit extends TableImpl<TVillageCompanyCreditRecord> {
 
-    private static final long serialVersionUID = 637941226;
+    private static final long serialVersionUID = 326997123;
 
     /**
      * The reference instance of <code>ndt.t_village_company_credit</code>
@@ -99,6 +99,11 @@ public class TVillageCompanyCredit extends TableImpl<TVillageCompanyCreditRecord
      * The column <code>ndt.t_village_company_credit.update_time</code>.
      */
     public final TableField<TVillageCompanyCreditRecord, Timestamp> UPDATE_TIME = createField("update_time", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
+
+    /**
+     * The column <code>ndt.t_village_company_credit.honor_img</code>. 荣誉凭证图片
+     */
+    public final TableField<TVillageCompanyCreditRecord, BigDecimal[]> HONOR_IMG = createField("honor_img", org.jooq.impl.SQLDataType.NUMERIC.getArrayDataType(), this, "荣誉凭证图片");
 
     /**
      * Create a <code>ndt.t_village_company_credit</code> table reference

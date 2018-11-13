@@ -33,15 +33,24 @@ import com.ndt.sms.entity.tables.CAdminDivision;
 import com.ndt.sms.entity.tables.CDictMapping;
 import com.ndt.sms.entity.tables.CDictType;
 import com.ndt.sms.entity.tables.CSensitiveWords;
+import com.ndt.sms.entity.tables.Clientdetails;
 import com.ndt.sms.entity.tables.MtMessageAccepter;
 import com.ndt.sms.entity.tables.MtRoleMenu;
 import com.ndt.sms.entity.tables.MtUserRole;
+import com.ndt.sms.entity.tables.OauthAccessToken;
+import com.ndt.sms.entity.tables.OauthApprovals;
+import com.ndt.sms.entity.tables.OauthClientDetails;
+import com.ndt.sms.entity.tables.OauthClientToken;
+import com.ndt.sms.entity.tables.OauthCode;
+import com.ndt.sms.entity.tables.OauthRefreshToken;
 import com.ndt.sms.entity.tables.TAdvert;
 import com.ndt.sms.entity.tables.TAdvertBak;
+import com.ndt.sms.entity.tables.TAppVersion;
 import com.ndt.sms.entity.tables.TBanner;
 import com.ndt.sms.entity.tables.TBannerBak;
 import com.ndt.sms.entity.tables.TBannerModel;
 import com.ndt.sms.entity.tables.TBusinessResource;
+import com.ndt.sms.entity.tables.TButtonForm;
 import com.ndt.sms.entity.tables.TCollection;
 import com.ndt.sms.entity.tables.TCompanyDetail;
 import com.ndt.sms.entity.tables.TCompanyDetailPrecheck;
@@ -113,6 +122,7 @@ import com.ndt.sms.entity.tables.TPolicy;
 import com.ndt.sms.entity.tables.TPolicyService;
 import com.ndt.sms.entity.tables.TPolicyServiceApply;
 import com.ndt.sms.entity.tables.TPolicyServiceMaterial;
+import com.ndt.sms.entity.tables.TPolicyServiceRadix;
 import com.ndt.sms.entity.tables.TPolicyServiceSync;
 import com.ndt.sms.entity.tables.TProfessionAgent;
 import com.ndt.sms.entity.tables.TPropertyRightsTrading;
@@ -137,6 +147,8 @@ import com.ndt.sms.entity.tables.TSms;
 import com.ndt.sms.entity.tables.TStandardRate;
 import com.ndt.sms.entity.tables.TStaticSource;
 import com.ndt.sms.entity.tables.TStaticSourceBak;
+import com.ndt.sms.entity.tables.TStepBase;
+import com.ndt.sms.entity.tables.TStepButton;
 import com.ndt.sms.entity.tables.TTermBase;
 import com.ndt.sms.entity.tables.TThirdUser;
 import com.ndt.sms.entity.tables.TUser;
@@ -145,19 +157,24 @@ import com.ndt.sms.entity.tables.TUserCredittaskLog;
 import com.ndt.sms.entity.tables.TUserInfoDetail;
 import com.ndt.sms.entity.tables.TUserPropertyright;
 import com.ndt.sms.entity.tables.TVillageCompanyBaseinfo;
+import com.ndt.sms.entity.tables.TVillageCompanyBusiness;
 import com.ndt.sms.entity.tables.TVillageCompanyCredit;
 import com.ndt.sms.entity.tables.TVillageCompanyDetail;
+import com.ndt.sms.entity.tables.TVillageCompanyEmployment;
 import com.ndt.sms.entity.tables.TVillageCompanyEvaluation;
 import com.ndt.sms.entity.tables.TVillageCompanyFinance;
 import com.ndt.sms.entity.tables.TVillageCompanyHonor;
 import com.ndt.sms.entity.tables.TVillageCompanyInsurance;
 import com.ndt.sms.entity.tables.TVillageCompanyInvestment;
 import com.ndt.sms.entity.tables.TVillageCompanyKnowledge;
+import com.ndt.sms.entity.tables.TVillageCompanyLoan;
 import com.ndt.sms.entity.tables.TVillageCompanyManagement;
 import com.ndt.sms.entity.tables.TVillageCompanyPatent;
 import com.ndt.sms.entity.tables.TVillageCompanyPayment;
 import com.ndt.sms.entity.tables.TVillageCompanyPurchase;
 import com.ndt.sms.entity.tables.TVillageCompanyReward;
+import com.ndt.sms.entity.tables.TVillageCompanySales;
+import com.ndt.sms.entity.tables.TVillageCompanySubsidy;
 import com.ndt.sms.entity.tables.TVillageCompanyWarrant;
 import com.ndt.sms.entity.tables.TVillagePersonalAwardsPunishments;
 import com.ndt.sms.entity.tables.TVillagePersonalBaseinfo;
@@ -339,6 +356,11 @@ public class Tables {
     public static final CSensitiveWords C_SENSITIVE_WORDS = com.ndt.sms.entity.tables.CSensitiveWords.C_SENSITIVE_WORDS;
 
     /**
+     * The table <code>ndt.clientdetails</code>.
+     */
+    public static final Clientdetails CLIENTDETAILS = com.ndt.sms.entity.tables.Clientdetails.CLIENTDETAILS;
+
+    /**
      * 消息接收者表
      */
     public static final MtMessageAccepter MT_MESSAGE_ACCEPTER = com.ndt.sms.entity.tables.MtMessageAccepter.MT_MESSAGE_ACCEPTER;
@@ -354,6 +376,36 @@ public class Tables {
     public static final MtUserRole MT_USER_ROLE = com.ndt.sms.entity.tables.MtUserRole.MT_USER_ROLE;
 
     /**
+     * The table <code>ndt.oauth_access_token</code>.
+     */
+    public static final OauthAccessToken OAUTH_ACCESS_TOKEN = com.ndt.sms.entity.tables.OauthAccessToken.OAUTH_ACCESS_TOKEN;
+
+    /**
+     * The table <code>ndt.oauth_approvals</code>.
+     */
+    public static final OauthApprovals OAUTH_APPROVALS = com.ndt.sms.entity.tables.OauthApprovals.OAUTH_APPROVALS;
+
+    /**
+     * The table <code>ndt.oauth_client_details</code>.
+     */
+    public static final OauthClientDetails OAUTH_CLIENT_DETAILS = com.ndt.sms.entity.tables.OauthClientDetails.OAUTH_CLIENT_DETAILS;
+
+    /**
+     * The table <code>ndt.oauth_client_token</code>.
+     */
+    public static final OauthClientToken OAUTH_CLIENT_TOKEN = com.ndt.sms.entity.tables.OauthClientToken.OAUTH_CLIENT_TOKEN;
+
+    /**
+     * The table <code>ndt.oauth_code</code>.
+     */
+    public static final OauthCode OAUTH_CODE = com.ndt.sms.entity.tables.OauthCode.OAUTH_CODE;
+
+    /**
+     * The table <code>ndt.oauth_refresh_token</code>.
+     */
+    public static final OauthRefreshToken OAUTH_REFRESH_TOKEN = com.ndt.sms.entity.tables.OauthRefreshToken.OAUTH_REFRESH_TOKEN;
+
+    /**
      * 散叶广告表
      */
     public static final TAdvert T_ADVERT = com.ndt.sms.entity.tables.TAdvert.T_ADVERT;
@@ -362,6 +414,11 @@ public class Tables {
      * 散叶广告表
      */
     public static final TAdvertBak T_ADVERT_BAK = com.ndt.sms.entity.tables.TAdvertBak.T_ADVERT_BAK;
+
+    /**
+     * APP版本管理
+     */
+    public static final TAppVersion T_APP_VERSION = com.ndt.sms.entity.tables.TAppVersion.T_APP_VERSION;
 
     /**
      * t_banner
@@ -382,6 +439,11 @@ public class Tables {
      * 业务资源表
      */
     public static final TBusinessResource T_BUSINESS_RESOURCE = com.ndt.sms.entity.tables.TBusinessResource.T_BUSINESS_RESOURCE;
+
+    /**
+     * 表单属性
+     */
+    public static final TButtonForm T_BUTTON_FORM = com.ndt.sms.entity.tables.TButtonForm.T_BUTTON_FORM;
 
     /**
      * The table <code>ndt.t_collection</code>.
@@ -739,6 +801,11 @@ public class Tables {
     public static final TPolicyServiceMaterial T_POLICY_SERVICE_MATERIAL = com.ndt.sms.entity.tables.TPolicyServiceMaterial.T_POLICY_SERVICE_MATERIAL;
 
     /**
+     * 政策申办统计基数
+     */
+    public static final TPolicyServiceRadix T_POLICY_SERVICE_RADIX = com.ndt.sms.entity.tables.TPolicyServiceRadix.T_POLICY_SERVICE_RADIX;
+
+    /**
      * 政策服务流程处理
      */
     public static final TPolicyServiceSync T_POLICY_SERVICE_SYNC = com.ndt.sms.entity.tables.TPolicyServiceSync.T_POLICY_SERVICE_SYNC;
@@ -859,6 +926,16 @@ public class Tables {
     public static final TStaticSourceBak T_STATIC_SOURCE_BAK = com.ndt.sms.entity.tables.TStaticSourceBak.T_STATIC_SOURCE_BAK;
 
     /**
+     * 步骤主表
+     */
+    public static final TStepBase T_STEP_BASE = com.ndt.sms.entity.tables.TStepBase.T_STEP_BASE;
+
+    /**
+     * 步骤操作按钮
+     */
+    public static final TStepButton T_STEP_BUTTON = com.ndt.sms.entity.tables.TStepButton.T_STEP_BUTTON;
+
+    /**
      * 项目大类型
      */
     public static final TTermBase T_TERM_BASE = com.ndt.sms.entity.tables.TTermBase.T_TERM_BASE;
@@ -899,6 +976,11 @@ public class Tables {
     public static final TVillageCompanyBaseinfo T_VILLAGE_COMPANY_BASEINFO = com.ndt.sms.entity.tables.TVillageCompanyBaseinfo.T_VILLAGE_COMPANY_BASEINFO;
 
     /**
+     * 村站采集的公司经营信息
+     */
+    public static final TVillageCompanyBusiness T_VILLAGE_COMPANY_BUSINESS = com.ndt.sms.entity.tables.TVillageCompanyBusiness.T_VILLAGE_COMPANY_BUSINESS;
+
+    /**
      * 村站采集的公司信用称号信息
      */
     public static final TVillageCompanyCredit T_VILLAGE_COMPANY_CREDIT = com.ndt.sms.entity.tables.TVillageCompanyCredit.T_VILLAGE_COMPANY_CREDIT;
@@ -907,6 +989,11 @@ public class Tables {
      * 村站采集的公司信息
      */
     public static final TVillageCompanyDetail T_VILLAGE_COMPANY_DETAIL = com.ndt.sms.entity.tables.TVillageCompanyDetail.T_VILLAGE_COMPANY_DETAIL;
+
+    /**
+     * 村站采集的公司用工信息
+     */
+    public static final TVillageCompanyEmployment T_VILLAGE_COMPANY_EMPLOYMENT = com.ndt.sms.entity.tables.TVillageCompanyEmployment.T_VILLAGE_COMPANY_EMPLOYMENT;
 
     /**
      * 村站采集的公司信用评价信息
@@ -939,6 +1026,11 @@ public class Tables {
     public static final TVillageCompanyKnowledge T_VILLAGE_COMPANY_KNOWLEDGE = com.ndt.sms.entity.tables.TVillageCompanyKnowledge.T_VILLAGE_COMPANY_KNOWLEDGE;
 
     /**
+     * 村站采集的公司贷款信息
+     */
+    public static final TVillageCompanyLoan T_VILLAGE_COMPANY_LOAN = com.ndt.sms.entity.tables.TVillageCompanyLoan.T_VILLAGE_COMPANY_LOAN;
+
+    /**
      * 村站采集的公司经营状况表
      */
     public static final TVillageCompanyManagement T_VILLAGE_COMPANY_MANAGEMENT = com.ndt.sms.entity.tables.TVillageCompanyManagement.T_VILLAGE_COMPANY_MANAGEMENT;
@@ -962,6 +1054,16 @@ public class Tables {
      * 村站采集的公司奖励/处罚信息
      */
     public static final TVillageCompanyReward T_VILLAGE_COMPANY_REWARD = com.ndt.sms.entity.tables.TVillageCompanyReward.T_VILLAGE_COMPANY_REWARD;
+
+    /**
+     * 村站采集的公司销售信息
+     */
+    public static final TVillageCompanySales T_VILLAGE_COMPANY_SALES = com.ndt.sms.entity.tables.TVillageCompanySales.T_VILLAGE_COMPANY_SALES;
+
+    /**
+     * 村站采集的公司政府补贴信息
+     */
+    public static final TVillageCompanySubsidy T_VILLAGE_COMPANY_SUBSIDY = com.ndt.sms.entity.tables.TVillageCompanySubsidy.T_VILLAGE_COMPANY_SUBSIDY;
 
     /**
      * 村站采集的公司权证信息

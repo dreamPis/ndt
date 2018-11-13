@@ -16,6 +16,7 @@ import java.util.List;
 import javax.annotation.Generated;
 
 import org.jooq.Field;
+import org.jooq.ForeignKey;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Schema;
@@ -39,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class ActRuEventSubscr extends TableImpl<ActRuEventSubscrRecord> {
 
-    private static final long serialVersionUID = 1831751624;
+    private static final long serialVersionUID = 1280435318;
 
     /**
      * The reference instance of <code>ndt.act_ru_event_subscr</code>
@@ -168,6 +169,14 @@ public class ActRuEventSubscr extends TableImpl<ActRuEventSubscrRecord> {
     @Override
     public List<UniqueKey<ActRuEventSubscrRecord>> getKeys() {
         return Arrays.<UniqueKey<ActRuEventSubscrRecord>>asList(Keys.ACT_RU_EVENT_SUBSCR_PKEY);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<ForeignKey<ActRuEventSubscrRecord, ?>> getReferences() {
+        return Arrays.<ForeignKey<ActRuEventSubscrRecord, ?>>asList(Keys.ACT_RU_EVENT_SUBSCR__ACT_FK_EVENT_EXEC);
     }
 
     /**

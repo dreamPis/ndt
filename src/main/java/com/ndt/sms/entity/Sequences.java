@@ -34,16 +34,6 @@ public class Sequences {
     public static final Sequence<Long> SEQ1 = new SequenceImpl<Long>("seq1", Ndt.NDT, org.jooq.impl.SQLDataType.BIGINT.nullable(false));
 
     /**
-     * The sequence <code>ndt.t_risks_share_id_seq</code>
-     */
-    public static final Sequence<Long> T_RISKS_SHARE_ID_SEQ = new SequenceImpl<Long>("t_risks_share_id_seq", Ndt.NDT, org.jooq.impl.SQLDataType.BIGINT.nullable(false));
-
-    /**
-     * The sequence <code>ndt.t_risks_share_trace_id_seq</code>
-     */
-    public static final Sequence<Long> T_RISKS_SHARE_TRACE_ID_SEQ = new SequenceImpl<Long>("t_risks_share_trace_id_seq", Ndt.NDT, org.jooq.impl.SQLDataType.BIGINT.nullable(false));
-
-    /**
      * The sequence <code>ndt.tb_farm0_copy_date</code>
      */
     public static final Sequence<Long> TB_FARM0_COPY_DATE = new SequenceImpl<Long>("tb_farm0_copy_date", Ndt.NDT, org.jooq.impl.SQLDataType.BIGINT.nullable(false));
@@ -67,4 +57,14 @@ public class Sequences {
      * The sequence <code>ndt.tb_user_detail_id_seq</code>
      */
     public static final Sequence<Long> TB_USER_DETAIL_ID_SEQ = new SequenceImpl<Long>("tb_user_detail_id_seq", Ndt.NDT, org.jooq.impl.SQLDataType.BIGINT.nullable(false));
+
+    /**
+     * The sequence <code>ndt.t_risks_share_id_seq</code>
+     */
+    public static final Sequence<Long> T_RISKS_SHARE_ID_SEQ = new SequenceImpl<Long>("t_risks_share_id_seq", Ndt.NDT, org.jooq.impl.SQLDataType.BIGINT.nullable(false));
+
+    /**
+     * The sequence <code>ndt.t_risks_share_trace_id_seq</code>
+     */
+    public static final Sequence<Long> T_RISKS_SHARE_TRACE_ID_SEQ = new SequenceImpl<Long>("t_risks_share_trace_id_seq", Ndt.NDT, org.jooq.impl.SQLDataType.BIGINT.nullable(false));
 }

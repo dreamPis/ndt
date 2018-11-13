@@ -7,6 +7,7 @@ package com.ndt.sms.entity.tables.pojos;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.Arrays;
 
 import javax.annotation.Generated;
 
@@ -24,17 +25,18 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class VillageCompanyCreditPjo implements Serializable {
 
-    private static final long serialVersionUID = 1515345691;
+    private static final long serialVersionUID = -503496891;
 
-    private BigDecimal id;
-    private BigDecimal villageCompanyInfoId;
-    private String     situation;
-    private String     year;
-    private Short      status;
-    private BigDecimal createUser;
-    private Timestamp  createTime;
-    private BigDecimal updateUser;
-    private Timestamp  updateTime;
+    private BigDecimal   id;
+    private BigDecimal   villageCompanyInfoId;
+    private String       situation;
+    private String       year;
+    private Short        status;
+    private BigDecimal   createUser;
+    private Timestamp    createTime;
+    private BigDecimal   updateUser;
+    private Timestamp    updateTime;
+    private BigDecimal[] honorImg;
 
     public VillageCompanyCreditPjo() {}
 
@@ -48,18 +50,20 @@ public class VillageCompanyCreditPjo implements Serializable {
         this.createTime = value.createTime;
         this.updateUser = value.updateUser;
         this.updateTime = value.updateTime;
+        this.honorImg = value.honorImg;
     }
 
     public VillageCompanyCreditPjo(
-        BigDecimal id,
-        BigDecimal villageCompanyInfoId,
-        String     situation,
-        String     year,
-        Short      status,
-        BigDecimal createUser,
-        Timestamp  createTime,
-        BigDecimal updateUser,
-        Timestamp  updateTime
+        BigDecimal   id,
+        BigDecimal   villageCompanyInfoId,
+        String       situation,
+        String       year,
+        Short        status,
+        BigDecimal   createUser,
+        Timestamp    createTime,
+        BigDecimal   updateUser,
+        Timestamp    updateTime,
+        BigDecimal[] honorImg
     ) {
         this.id = id;
         this.villageCompanyInfoId = villageCompanyInfoId;
@@ -70,6 +74,7 @@ public class VillageCompanyCreditPjo implements Serializable {
         this.createTime = createTime;
         this.updateUser = updateUser;
         this.updateTime = updateTime;
+        this.honorImg = honorImg;
     }
 
     public BigDecimal getId() {
@@ -153,6 +158,15 @@ public class VillageCompanyCreditPjo implements Serializable {
         return this;
     }
 
+    public BigDecimal[] getHonorImg() {
+        return this.honorImg;
+    }
+
+    public VillageCompanyCreditPjo setHonorImg(BigDecimal... honorImg) {
+        this.honorImg = honorImg;
+        return this;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("VillageCompanyCreditPjo (");
@@ -166,6 +180,7 @@ public class VillageCompanyCreditPjo implements Serializable {
         sb.append(", ").append(createTime);
         sb.append(", ").append(updateUser);
         sb.append(", ").append(updateTime);
+        sb.append(", ").append(Arrays.toString(honorImg));
 
         sb.append(")");
         return sb.toString();

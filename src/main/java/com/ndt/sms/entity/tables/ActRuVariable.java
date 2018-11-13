@@ -15,6 +15,7 @@ import java.util.List;
 import javax.annotation.Generated;
 
 import org.jooq.Field;
+import org.jooq.ForeignKey;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Schema;
@@ -38,7 +39,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class ActRuVariable extends TableImpl<ActRuVariableRecord> {
 
-    private static final long serialVersionUID = 463585226;
+    private static final long serialVersionUID = 1711480816;
 
     /**
      * The reference instance of <code>ndt.act_ru_variable</code>
@@ -172,6 +173,14 @@ public class ActRuVariable extends TableImpl<ActRuVariableRecord> {
     @Override
     public List<UniqueKey<ActRuVariableRecord>> getKeys() {
         return Arrays.<UniqueKey<ActRuVariableRecord>>asList(Keys.ACT_RU_VARIABLE_PKEY);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<ForeignKey<ActRuVariableRecord, ?>> getReferences() {
+        return Arrays.<ForeignKey<ActRuVariableRecord, ?>>asList(Keys.ACT_RU_VARIABLE__ACT_FK_VAR_EXE, Keys.ACT_RU_VARIABLE__ACT_FK_VAR_PROCINST, Keys.ACT_RU_VARIABLE__ACT_FK_VAR_BYTEARRAY);
     }
 
     /**

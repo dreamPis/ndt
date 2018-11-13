@@ -24,7 +24,7 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class FinancialApplyPjo implements Serializable {
 
-    private static final long serialVersionUID = -858785466;
+    private static final long serialVersionUID = -247934100;
 
     private BigDecimal id;
     private BigDecimal userId;
@@ -50,6 +50,8 @@ public class FinancialApplyPjo implements Serializable {
     private String     remark;
     private Integer    applyType;
     private BigDecimal bankAcceptAmount;
+    private Integer    applyTermUnit;
+    private Integer    applyAmountUnit;
 
     public FinancialApplyPjo() {}
 
@@ -78,6 +80,8 @@ public class FinancialApplyPjo implements Serializable {
         this.remark = value.remark;
         this.applyType = value.applyType;
         this.bankAcceptAmount = value.bankAcceptAmount;
+        this.applyTermUnit = value.applyTermUnit;
+        this.applyAmountUnit = value.applyAmountUnit;
     }
 
     public FinancialApplyPjo(
@@ -104,7 +108,9 @@ public class FinancialApplyPjo implements Serializable {
         Integer    applyTerm,
         String     remark,
         Integer    applyType,
-        BigDecimal bankAcceptAmount
+        BigDecimal bankAcceptAmount,
+        Integer    applyTermUnit,
+        Integer    applyAmountUnit
     ) {
         this.id = id;
         this.userId = userId;
@@ -130,6 +136,8 @@ public class FinancialApplyPjo implements Serializable {
         this.remark = remark;
         this.applyType = applyType;
         this.bankAcceptAmount = bankAcceptAmount;
+        this.applyTermUnit = applyTermUnit;
+        this.applyAmountUnit = applyAmountUnit;
     }
 
     public BigDecimal getId() {
@@ -348,6 +356,24 @@ public class FinancialApplyPjo implements Serializable {
         return this;
     }
 
+    public Integer getApplyTermUnit() {
+        return this.applyTermUnit;
+    }
+
+    public FinancialApplyPjo setApplyTermUnit(Integer applyTermUnit) {
+        this.applyTermUnit = applyTermUnit;
+        return this;
+    }
+
+    public Integer getApplyAmountUnit() {
+        return this.applyAmountUnit;
+    }
+
+    public FinancialApplyPjo setApplyAmountUnit(Integer applyAmountUnit) {
+        this.applyAmountUnit = applyAmountUnit;
+        return this;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("FinancialApplyPjo (");
@@ -376,6 +402,8 @@ public class FinancialApplyPjo implements Serializable {
         sb.append(", ").append(remark);
         sb.append(", ").append(applyType);
         sb.append(", ").append(bankAcceptAmount);
+        sb.append(", ").append(applyTermUnit);
+        sb.append(", ").append(applyAmountUnit);
 
         sb.append(")");
         return sb.toString();

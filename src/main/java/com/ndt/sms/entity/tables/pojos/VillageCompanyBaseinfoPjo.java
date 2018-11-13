@@ -7,6 +7,7 @@ package com.ndt.sms.entity.tables.pojos;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.Arrays;
 
 import javax.annotation.Generated;
 
@@ -24,47 +25,50 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class VillageCompanyBaseinfoPjo implements Serializable {
 
-    private static final long serialVersionUID = -254472809;
+    private static final long serialVersionUID = 1066153541;
 
-    private BigDecimal id;
-    private Integer    certificateType;
-    private String     name;
-    private String     code;
-    private String     address;
-    private Integer    companyType;
-    private Integer    productionType;
-    private Integer    memberTotal;
-    private BigDecimal divisionId;
-    private Integer    industryType;
-    private Timestamp  setupTime;
-    private String     businessScope;
-    private BigDecimal businessSize;
-    private Integer    businessSizeUnit;
-    private BigDecimal businessIncome;
-    private String     businessIncomeUnit;
-    private Timestamp  businessDeadline;
-    private String     registeredCapital;
-    private Boolean    isEmerging;
-    private String     legalPerson;
-    private String     legalPersonIdentityId;
-    private String     legalPersonPhone;
-    private Timestamp  legalPersonIdDeadline;
-    private String     relatedImgUrls;
-    private Integer    workerTotal;
-    private String     workerTime;
-    private String     workerMoney;
-    private Integer    socialMorality;
-    private String     operatingHistory;
-    private Integer    operationSituation;
-    private Boolean    isCourtBlacklist;
-    private Boolean    isBusinessBlacklist;
-    private Boolean    isCourtEnforcement;
-    private Integer    state;
-    private Short      status;
-    private BigDecimal createUser;
-    private Timestamp  createTime;
-    private BigDecimal updateUser;
-    private Timestamp  updateTime;
+    private BigDecimal   id;
+    private Integer      certificateType;
+    private String       name;
+    private String       code;
+    private String       address;
+    private Integer      companyType;
+    private Integer      productionType;
+    private Integer      memberTotal;
+    private BigDecimal   divisionId;
+    private Integer      industryType;
+    private Timestamp    setupTime;
+    private String       businessScope;
+    private BigDecimal   businessSize;
+    private Integer      businessSizeUnit;
+    private BigDecimal   businessIncome;
+    private String       businessIncomeUnit;
+    private Timestamp    businessDeadline;
+    private String       registeredCapital;
+    private Boolean      isEmerging;
+    private String       legalPerson;
+    private String       legalPersonIdentityId;
+    private String       legalPersonPhone;
+    private Timestamp    legalPersonIdDeadline;
+    private String       relatedImgUrls;
+    private Integer      workerTotal;
+    private String       workerTime;
+    private String       workerMoney;
+    private Integer      socialMorality;
+    private String       operatingHistory;
+    private Integer      operationSituation;
+    private Boolean      isCourtBlacklist;
+    private Boolean      isBusinessBlacklist;
+    private Boolean      isCourtEnforcement;
+    private Integer      state;
+    private Short        status;
+    private BigDecimal   createUser;
+    private Timestamp    createTime;
+    private BigDecimal   updateUser;
+    private Timestamp    updateTime;
+    private BigDecimal[] documentPath;
+    private Object       companyTypeInfo;
+    private String       remark;
 
     public VillageCompanyBaseinfoPjo() {}
 
@@ -108,48 +112,54 @@ public class VillageCompanyBaseinfoPjo implements Serializable {
         this.createTime = value.createTime;
         this.updateUser = value.updateUser;
         this.updateTime = value.updateTime;
+        this.documentPath = value.documentPath;
+        this.companyTypeInfo = value.companyTypeInfo;
+        this.remark = value.remark;
     }
 
     public VillageCompanyBaseinfoPjo(
-        BigDecimal id,
-        Integer    certificateType,
-        String     name,
-        String     code,
-        String     address,
-        Integer    companyType,
-        Integer    productionType,
-        Integer    memberTotal,
-        BigDecimal divisionId,
-        Integer    industryType,
-        Timestamp  setupTime,
-        String     businessScope,
-        BigDecimal businessSize,
-        Integer    businessSizeUnit,
-        BigDecimal businessIncome,
-        String     businessIncomeUnit,
-        Timestamp  businessDeadline,
-        String     registeredCapital,
-        Boolean    isEmerging,
-        String     legalPerson,
-        String     legalPersonIdentityId,
-        String     legalPersonPhone,
-        Timestamp  legalPersonIdDeadline,
-        String     relatedImgUrls,
-        Integer    workerTotal,
-        String     workerTime,
-        String     workerMoney,
-        Integer    socialMorality,
-        String     operatingHistory,
-        Integer    operationSituation,
-        Boolean    isCourtBlacklist,
-        Boolean    isBusinessBlacklist,
-        Boolean    isCourtEnforcement,
-        Integer    state,
-        Short      status,
-        BigDecimal createUser,
-        Timestamp  createTime,
-        BigDecimal updateUser,
-        Timestamp  updateTime
+        BigDecimal   id,
+        Integer      certificateType,
+        String       name,
+        String       code,
+        String       address,
+        Integer      companyType,
+        Integer      productionType,
+        Integer      memberTotal,
+        BigDecimal   divisionId,
+        Integer      industryType,
+        Timestamp    setupTime,
+        String       businessScope,
+        BigDecimal   businessSize,
+        Integer      businessSizeUnit,
+        BigDecimal   businessIncome,
+        String       businessIncomeUnit,
+        Timestamp    businessDeadline,
+        String       registeredCapital,
+        Boolean      isEmerging,
+        String       legalPerson,
+        String       legalPersonIdentityId,
+        String       legalPersonPhone,
+        Timestamp    legalPersonIdDeadline,
+        String       relatedImgUrls,
+        Integer      workerTotal,
+        String       workerTime,
+        String       workerMoney,
+        Integer      socialMorality,
+        String       operatingHistory,
+        Integer      operationSituation,
+        Boolean      isCourtBlacklist,
+        Boolean      isBusinessBlacklist,
+        Boolean      isCourtEnforcement,
+        Integer      state,
+        Short        status,
+        BigDecimal   createUser,
+        Timestamp    createTime,
+        BigDecimal   updateUser,
+        Timestamp    updateTime,
+        BigDecimal[] documentPath,
+        Object       companyTypeInfo,
+        String       remark
     ) {
         this.id = id;
         this.certificateType = certificateType;
@@ -190,6 +200,9 @@ public class VillageCompanyBaseinfoPjo implements Serializable {
         this.createTime = createTime;
         this.updateUser = updateUser;
         this.updateTime = updateTime;
+        this.documentPath = documentPath;
+        this.companyTypeInfo = companyTypeInfo;
+        this.remark = remark;
     }
 
     public BigDecimal getId() {
@@ -543,6 +556,43 @@ public class VillageCompanyBaseinfoPjo implements Serializable {
         return this;
     }
 
+    public BigDecimal[] getDocumentPath() {
+        return this.documentPath;
+    }
+
+    public VillageCompanyBaseinfoPjo setDocumentPath(BigDecimal... documentPath) {
+        this.documentPath = documentPath;
+        return this;
+    }
+
+
+    /**
+     * @deprecated Unknown data type. Please define an explicit {@link org.jooq.Binding} to specify how this type should be handled. Deprecation can be turned off using <deprecationOnUnknownTypes/> in your code generator configuration.
+     */
+    @java.lang.Deprecated
+    public Object getCompanyTypeInfo() {
+        return this.companyTypeInfo;
+    }
+
+
+    /**
+     * @deprecated Unknown data type. Please define an explicit {@link org.jooq.Binding} to specify how this type should be handled. Deprecation can be turned off using <deprecationOnUnknownTypes/> in your code generator configuration.
+     */
+    @java.lang.Deprecated
+    public VillageCompanyBaseinfoPjo setCompanyTypeInfo(Object companyTypeInfo) {
+        this.companyTypeInfo = companyTypeInfo;
+        return this;
+    }
+
+    public String getRemark() {
+        return this.remark;
+    }
+
+    public VillageCompanyBaseinfoPjo setRemark(String remark) {
+        this.remark = remark;
+        return this;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("VillageCompanyBaseinfoPjo (");
@@ -586,6 +636,9 @@ public class VillageCompanyBaseinfoPjo implements Serializable {
         sb.append(", ").append(createTime);
         sb.append(", ").append(updateUser);
         sb.append(", ").append(updateTime);
+        sb.append(", ").append(Arrays.toString(documentPath));
+        sb.append(", ").append(companyTypeInfo);
+        sb.append(", ").append(remark);
 
         sb.append(")");
         return sb.toString();

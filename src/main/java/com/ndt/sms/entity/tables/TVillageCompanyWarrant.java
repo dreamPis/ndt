@@ -40,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TVillageCompanyWarrant extends TableImpl<TVillageCompanyWarrantRecord> {
 
-    private static final long serialVersionUID = 1988069607;
+    private static final long serialVersionUID = 786584926;
 
     /**
      * The reference instance of <code>ndt.t_village_company_warrant</code>
@@ -134,6 +134,26 @@ public class TVillageCompanyWarrant extends TableImpl<TVillageCompanyWarrantReco
      * The column <code>ndt.t_village_company_warrant.update_time</code>.
      */
     public final TableField<TVillageCompanyWarrantRecord, Timestamp> UPDATE_TIME = createField("update_time", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
+
+    /**
+     * The column <code>ndt.t_village_company_warrant.property_right_area</code>. 产权面积
+     */
+    public final TableField<TVillageCompanyWarrantRecord, String> PROPERTY_RIGHT_AREA = createField("property_right_area", org.jooq.impl.SQLDataType.VARCHAR(20), this, "产权面积");
+
+    /**
+     * The column <code>ndt.t_village_company_warrant.is_freeze</code>. 法院是否冻结
+     */
+    public final TableField<TVillageCompanyWarrantRecord, Boolean> IS_FREEZE = createField("is_freeze", org.jooq.impl.SQLDataType.BOOLEAN, this, "法院是否冻结");
+
+    /**
+     * The column <code>ndt.t_village_company_warrant.img_crops</code>. 附作物照片
+     */
+    public final TableField<TVillageCompanyWarrantRecord, BigDecimal[]> IMG_CROPS = createField("img_crops", org.jooq.impl.SQLDataType.NUMERIC.getArrayDataType(), this, "附作物照片");
+
+    /**
+     * The column <code>ndt.t_village_company_warrant.property_right_imgs</code>. 权证图片（多个）
+     */
+    public final TableField<TVillageCompanyWarrantRecord, BigDecimal[]> PROPERTY_RIGHT_IMGS = createField("property_right_imgs", org.jooq.impl.SQLDataType.NUMERIC.getArrayDataType(), this, "权证图片（多个）");
 
     /**
      * Create a <code>ndt.t_village_company_warrant</code> table reference

@@ -7,6 +7,7 @@ package com.ndt.sms.entity.tables.pojos;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.Arrays;
 
 import javax.annotation.Generated;
 
@@ -24,21 +25,23 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class VillageCompanyHonorPjo implements Serializable {
 
-    private static final long serialVersionUID = 1437374197;
+    private static final long serialVersionUID = -688087983;
 
-    private BigDecimal id;
-    private BigDecimal villageCompanyInfoId;
-    private Integer    type;
-    private String     honorName;
-    private String     honorNo;
-    private String     awardUnit;
-    private Integer    level;
-    private String     awardDate;
-    private Short      status;
-    private BigDecimal createUser;
-    private Timestamp  createTime;
-    private BigDecimal updateUser;
-    private Timestamp  updateTime;
+    private BigDecimal   id;
+    private BigDecimal   villageCompanyInfoId;
+    private Integer      type;
+    private String       honorName;
+    private String       honorNo;
+    private String       awardUnit;
+    private Integer      level;
+    private String       awardDate;
+    private Short        status;
+    private BigDecimal   createUser;
+    private Timestamp    createTime;
+    private BigDecimal   updateUser;
+    private Timestamp    updateTime;
+    private String       issuerOrg;
+    private BigDecimal[] qualificationUrl;
 
     public VillageCompanyHonorPjo() {}
 
@@ -56,22 +59,26 @@ public class VillageCompanyHonorPjo implements Serializable {
         this.createTime = value.createTime;
         this.updateUser = value.updateUser;
         this.updateTime = value.updateTime;
+        this.issuerOrg = value.issuerOrg;
+        this.qualificationUrl = value.qualificationUrl;
     }
 
     public VillageCompanyHonorPjo(
-        BigDecimal id,
-        BigDecimal villageCompanyInfoId,
-        Integer    type,
-        String     honorName,
-        String     honorNo,
-        String     awardUnit,
-        Integer    level,
-        String     awardDate,
-        Short      status,
-        BigDecimal createUser,
-        Timestamp  createTime,
-        BigDecimal updateUser,
-        Timestamp  updateTime
+        BigDecimal   id,
+        BigDecimal   villageCompanyInfoId,
+        Integer      type,
+        String       honorName,
+        String       honorNo,
+        String       awardUnit,
+        Integer      level,
+        String       awardDate,
+        Short        status,
+        BigDecimal   createUser,
+        Timestamp    createTime,
+        BigDecimal   updateUser,
+        Timestamp    updateTime,
+        String       issuerOrg,
+        BigDecimal[] qualificationUrl
     ) {
         this.id = id;
         this.villageCompanyInfoId = villageCompanyInfoId;
@@ -86,6 +93,8 @@ public class VillageCompanyHonorPjo implements Serializable {
         this.createTime = createTime;
         this.updateUser = updateUser;
         this.updateTime = updateTime;
+        this.issuerOrg = issuerOrg;
+        this.qualificationUrl = qualificationUrl;
     }
 
     public BigDecimal getId() {
@@ -205,6 +214,24 @@ public class VillageCompanyHonorPjo implements Serializable {
         return this;
     }
 
+    public String getIssuerOrg() {
+        return this.issuerOrg;
+    }
+
+    public VillageCompanyHonorPjo setIssuerOrg(String issuerOrg) {
+        this.issuerOrg = issuerOrg;
+        return this;
+    }
+
+    public BigDecimal[] getQualificationUrl() {
+        return this.qualificationUrl;
+    }
+
+    public VillageCompanyHonorPjo setQualificationUrl(BigDecimal... qualificationUrl) {
+        this.qualificationUrl = qualificationUrl;
+        return this;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("VillageCompanyHonorPjo (");
@@ -222,6 +249,8 @@ public class VillageCompanyHonorPjo implements Serializable {
         sb.append(", ").append(createTime);
         sb.append(", ").append(updateUser);
         sb.append(", ").append(updateTime);
+        sb.append(", ").append(issuerOrg);
+        sb.append(", ").append(Arrays.toString(qualificationUrl));
 
         sb.append(")");
         return sb.toString();

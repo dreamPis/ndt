@@ -14,7 +14,9 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.ClientDetails;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
+import org.springframework.security.oauth2.provider.client.BaseClientDetails;
 import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
 import org.springframework.security.oauth2.provider.code.JdbcAuthorizationCodeServices;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
@@ -41,7 +43,7 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private ClientDetailsService clientDetailsService;
+    private JdbcClientDetailsService clientDetailsService;
 
     @Autowired
     private RedisTokenStore redisTokenStore;
@@ -80,8 +82,12 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
     }
 
     @Bean
-    public ClientDetailsService clientDetailsService() {
-        return new JdbcClientDetailsService(dataSource);
+    public JdbcClientDetailsService clientDetailsService() {
+        JdbcClientDetailsService service = new JdbcClientDetailsService(dataSource);
+        ClientDetails clientDetails = new BaseClientDetails();
+
+        service.addClientDetails(clientDetails);
+        return service;
     }
 
     @Bean

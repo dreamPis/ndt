@@ -40,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TVillageCompanyPurchase extends TableImpl<TVillageCompanyPurchaseRecord> {
 
-    private static final long serialVersionUID = -1286622539;
+    private static final long serialVersionUID = 938769403;
 
     /**
      * The reference instance of <code>ndt.t_village_company_purchase</code>
@@ -109,6 +109,11 @@ public class TVillageCompanyPurchase extends TableImpl<TVillageCompanyPurchaseRe
      * The column <code>ndt.t_village_company_purchase.update_time</code>.
      */
     public final TableField<TVillageCompanyPurchaseRecord, Timestamp> UPDATE_TIME = createField("update_time", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
+
+    /**
+     * The column <code>ndt.t_village_company_purchase.purchase_url</code>. 采购凭证图片
+     */
+    public final TableField<TVillageCompanyPurchaseRecord, BigDecimal[]> PURCHASE_URL = createField("purchase_url", org.jooq.impl.SQLDataType.NUMERIC.getArrayDataType(), this, "采购凭证图片");
 
     /**
      * Create a <code>ndt.t_village_company_purchase</code> table reference

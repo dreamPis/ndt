@@ -15,6 +15,7 @@ import java.util.List;
 import javax.annotation.Generated;
 
 import org.jooq.Field;
+import org.jooq.ForeignKey;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Schema;
@@ -38,7 +39,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class ActRuIdentitylink extends TableImpl<ActRuIdentitylinkRecord> {
 
-    private static final long serialVersionUID = -1784829495;
+    private static final long serialVersionUID = -1189836361;
 
     /**
      * The reference instance of <code>ndt.act_ru_identitylink</code>
@@ -152,6 +153,14 @@ public class ActRuIdentitylink extends TableImpl<ActRuIdentitylinkRecord> {
     @Override
     public List<UniqueKey<ActRuIdentitylinkRecord>> getKeys() {
         return Arrays.<UniqueKey<ActRuIdentitylinkRecord>>asList(Keys.ACT_RU_IDENTITYLINK_PKEY);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<ForeignKey<ActRuIdentitylinkRecord, ?>> getReferences() {
+        return Arrays.<ForeignKey<ActRuIdentitylinkRecord, ?>>asList(Keys.ACT_RU_IDENTITYLINK__ACT_FK_TSKASS_TASK, Keys.ACT_RU_IDENTITYLINK__ACT_FK_IDL_PROCINST, Keys.ACT_RU_IDENTITYLINK__ACT_FK_ATHRZ_PROCEDEF);
     }
 
     /**

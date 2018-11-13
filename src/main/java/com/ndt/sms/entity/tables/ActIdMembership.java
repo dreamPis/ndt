@@ -15,6 +15,7 @@ import java.util.List;
 import javax.annotation.Generated;
 
 import org.jooq.Field;
+import org.jooq.ForeignKey;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Schema;
@@ -38,7 +39,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class ActIdMembership extends TableImpl<ActIdMembershipRecord> {
 
-    private static final long serialVersionUID = -1250775783;
+    private static final long serialVersionUID = -1268197312;
 
     /**
      * The reference instance of <code>ndt.act_id_membership</code>
@@ -122,6 +123,14 @@ public class ActIdMembership extends TableImpl<ActIdMembershipRecord> {
     @Override
     public List<UniqueKey<ActIdMembershipRecord>> getKeys() {
         return Arrays.<UniqueKey<ActIdMembershipRecord>>asList(Keys.ACT_ID_MEMBERSHIP_PKEY);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<ForeignKey<ActIdMembershipRecord, ?>> getReferences() {
+        return Arrays.<ForeignKey<ActIdMembershipRecord, ?>>asList(Keys.ACT_ID_MEMBERSHIP__ACT_FK_MEMB_USER, Keys.ACT_ID_MEMBERSHIP__ACT_FK_MEMB_GROUP);
     }
 
     /**

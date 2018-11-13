@@ -41,7 +41,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TRisksShareTrace extends TableImpl<TRisksShareTraceRecord> {
 
-    private static final long serialVersionUID = -2081307724;
+    private static final long serialVersionUID = -999257276;
 
     /**
      * The reference instance of <code>ndt.t_risks_share_trace</code>
@@ -59,7 +59,7 @@ public class TRisksShareTrace extends TableImpl<TRisksShareTraceRecord> {
     /**
      * The column <code>ndt.t_risks_share_trace.id</code>. 自增id
      */
-    public final TableField<TRisksShareTraceRecord, Long> ID = createField("id", org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.field("nextval('ndt.t_risks_share_trace_id_seq'::regclass)", org.jooq.impl.SQLDataType.BIGINT)), this, "自增id");
+    public final TableField<TRisksShareTraceRecord, Long> ID = createField("id", org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.field("nextval('t_risks_share_trace_id_seq'::regclass)", org.jooq.impl.SQLDataType.BIGINT)), this, "自增id");
 
     /**
      * The column <code>ndt.t_risks_share_trace.loan_id</code>. 对应t_loan_done放款id

@@ -16,6 +16,7 @@ import java.util.List;
 import javax.annotation.Generated;
 
 import org.jooq.Field;
+import org.jooq.ForeignKey;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Schema;
@@ -39,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class ActRuTask extends TableImpl<ActRuTaskRecord> {
 
-    private static final long serialVersionUID = 419538851;
+    private static final long serialVersionUID = -603899812;
 
     /**
      * The reference instance of <code>ndt.act_ru_task</code>
@@ -208,6 +209,14 @@ public class ActRuTask extends TableImpl<ActRuTaskRecord> {
     @Override
     public List<UniqueKey<ActRuTaskRecord>> getKeys() {
         return Arrays.<UniqueKey<ActRuTaskRecord>>asList(Keys.ACT_RU_TASK_PKEY);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<ForeignKey<ActRuTaskRecord, ?>> getReferences() {
+        return Arrays.<ForeignKey<ActRuTaskRecord, ?>>asList(Keys.ACT_RU_TASK__ACT_FK_TASK_EXE, Keys.ACT_RU_TASK__ACT_FK_TASK_PROCINST, Keys.ACT_RU_TASK__ACT_FK_TASK_PROCDEF);
     }
 
     /**

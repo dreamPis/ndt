@@ -40,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class ActEvtLog extends TableImpl<ActEvtLogRecord> {
 
-    private static final long serialVersionUID = -1930367969;
+    private static final long serialVersionUID = -1184902769;
 
     /**
      * The reference instance of <code>ndt.act_evt_log</code>
@@ -58,7 +58,7 @@ public class ActEvtLog extends TableImpl<ActEvtLogRecord> {
     /**
      * The column <code>ndt.act_evt_log.log_nr_</code>.
      */
-    public final TableField<ActEvtLogRecord, Integer> LOG_NR_ = createField("log_nr_", org.jooq.impl.SQLDataType.INTEGER.nullable(false).defaultValue(org.jooq.impl.DSL.field("nextval('ndt.act_evt_log_log_nr__seq'::regclass)", org.jooq.impl.SQLDataType.INTEGER)), this, "");
+    public final TableField<ActEvtLogRecord, Integer> LOG_NR_ = createField("log_nr_", org.jooq.impl.SQLDataType.INTEGER.nullable(false).defaultValue(org.jooq.impl.DSL.field("nextval('act_evt_log_log_nr__seq'::regclass)", org.jooq.impl.SQLDataType.INTEGER)), this, "");
 
     /**
      * The column <code>ndt.act_evt_log.type_</code>.

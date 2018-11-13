@@ -40,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TFinancialApply extends TableImpl<TFinancialApplyRecord> {
 
-    private static final long serialVersionUID = 596731186;
+    private static final long serialVersionUID = 114323092;
 
     /**
      * The reference instance of <code>ndt.t_financial_apply</code>
@@ -174,6 +174,16 @@ public class TFinancialApply extends TableImpl<TFinancialApplyRecord> {
      * The column <code>ndt.t_financial_apply.bank_accept_amount</code>. 银行受理金额
      */
     public final TableField<TFinancialApplyRecord, BigDecimal> BANK_ACCEPT_AMOUNT = createField("bank_accept_amount", org.jooq.impl.SQLDataType.NUMERIC, this, "银行受理金额");
+
+    /**
+     * The column <code>ndt.t_financial_apply.apply_term_unit</code>. 申请期限单位
+     */
+    public final TableField<TFinancialApplyRecord, Integer> APPLY_TERM_UNIT = createField("apply_term_unit", org.jooq.impl.SQLDataType.INTEGER, this, "申请期限单位");
+
+    /**
+     * The column <code>ndt.t_financial_apply.apply_amount_unit</code>. 申请金额单位
+     */
+    public final TableField<TFinancialApplyRecord, Integer> APPLY_AMOUNT_UNIT = createField("apply_amount_unit", org.jooq.impl.SQLDataType.INTEGER, this, "申请金额单位");
 
     /**
      * Create a <code>ndt.t_financial_apply</code> table reference

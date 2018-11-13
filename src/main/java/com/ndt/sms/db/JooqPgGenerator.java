@@ -10,10 +10,10 @@ public class JooqPgGenerator {
      * Jooq 自动化生成代码
      */
     private void gen() {
-        Jdbc jdbc = new Jdbc().withDriver("org.postgresql.Driver")
-                .withUrl("jdbc:postgresql://127.0.0.1:5432/ndt_pro?searchpath=ndt")
-                .withUser("root")
-                .withPassword("123456");
+        Jdbc jdbc = new Jdbc().withDriver("com.p6spy.engine.spy.P6SpyDriver")
+                .withUrl("jdbc:p6spy:postgresql://192.168.15.12:58083/ndt_pro?searchpath=ndt")
+                .withUser("postgres")
+                .withPassword("incitedata");
         Database database = new Database()
                 .withName("org.jooq.util.postgres.PostgresDatabase")
                 .withExcludes("schema_version")

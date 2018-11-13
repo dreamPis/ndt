@@ -7,6 +7,7 @@ package com.ndt.sms.entity.tables.pojos;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.Arrays;
 
 import javax.annotation.Generated;
 
@@ -24,21 +25,23 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class VillageCompanyInsurancePjo implements Serializable {
 
-    private static final long serialVersionUID = -439850134;
+    private static final long serialVersionUID = -686260102;
 
-    private BigDecimal id;
-    private BigDecimal villageCompanyInfoId;
-    private String     insuranceName;
-    private String     insuranceType;
-    private String     beneficiary;
-    private BigDecimal insuranceAmt;
-    private String     insuranceTime;
-    private String     insuranceDuetime;
-    private Short      status;
-    private BigDecimal createUser;
-    private Timestamp  createTime;
-    private BigDecimal updateUser;
-    private Timestamp  updateTime;
+    private BigDecimal   id;
+    private BigDecimal   villageCompanyInfoId;
+    private String       insuranceName;
+    private String       insuranceType;
+    private String       beneficiary;
+    private BigDecimal   insuranceAmt;
+    private String       insuranceTime;
+    private String       insuranceDuetime;
+    private Short        status;
+    private BigDecimal   createUser;
+    private Timestamp    createTime;
+    private BigDecimal   updateUser;
+    private Timestamp    updateTime;
+    private BigDecimal   insurancePay;
+    private BigDecimal[] insuranceImg;
 
     public VillageCompanyInsurancePjo() {}
 
@@ -56,22 +59,26 @@ public class VillageCompanyInsurancePjo implements Serializable {
         this.createTime = value.createTime;
         this.updateUser = value.updateUser;
         this.updateTime = value.updateTime;
+        this.insurancePay = value.insurancePay;
+        this.insuranceImg = value.insuranceImg;
     }
 
     public VillageCompanyInsurancePjo(
-        BigDecimal id,
-        BigDecimal villageCompanyInfoId,
-        String     insuranceName,
-        String     insuranceType,
-        String     beneficiary,
-        BigDecimal insuranceAmt,
-        String     insuranceTime,
-        String     insuranceDuetime,
-        Short      status,
-        BigDecimal createUser,
-        Timestamp  createTime,
-        BigDecimal updateUser,
-        Timestamp  updateTime
+        BigDecimal   id,
+        BigDecimal   villageCompanyInfoId,
+        String       insuranceName,
+        String       insuranceType,
+        String       beneficiary,
+        BigDecimal   insuranceAmt,
+        String       insuranceTime,
+        String       insuranceDuetime,
+        Short        status,
+        BigDecimal   createUser,
+        Timestamp    createTime,
+        BigDecimal   updateUser,
+        Timestamp    updateTime,
+        BigDecimal   insurancePay,
+        BigDecimal[] insuranceImg
     ) {
         this.id = id;
         this.villageCompanyInfoId = villageCompanyInfoId;
@@ -86,6 +93,8 @@ public class VillageCompanyInsurancePjo implements Serializable {
         this.createTime = createTime;
         this.updateUser = updateUser;
         this.updateTime = updateTime;
+        this.insurancePay = insurancePay;
+        this.insuranceImg = insuranceImg;
     }
 
     public BigDecimal getId() {
@@ -205,6 +214,24 @@ public class VillageCompanyInsurancePjo implements Serializable {
         return this;
     }
 
+    public BigDecimal getInsurancePay() {
+        return this.insurancePay;
+    }
+
+    public VillageCompanyInsurancePjo setInsurancePay(BigDecimal insurancePay) {
+        this.insurancePay = insurancePay;
+        return this;
+    }
+
+    public BigDecimal[] getInsuranceImg() {
+        return this.insuranceImg;
+    }
+
+    public VillageCompanyInsurancePjo setInsuranceImg(BigDecimal... insuranceImg) {
+        this.insuranceImg = insuranceImg;
+        return this;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("VillageCompanyInsurancePjo (");
@@ -222,6 +249,8 @@ public class VillageCompanyInsurancePjo implements Serializable {
         sb.append(", ").append(createTime);
         sb.append(", ").append(updateUser);
         sb.append(", ").append(updateTime);
+        sb.append(", ").append(insurancePay);
+        sb.append(", ").append(Arrays.toString(insuranceImg));
 
         sb.append(")");
         return sb.toString();

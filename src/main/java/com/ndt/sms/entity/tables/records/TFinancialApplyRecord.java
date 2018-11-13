@@ -28,7 +28,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TFinancialApplyRecord extends UpdatableRecordImpl<TFinancialApplyRecord> {
 
-    private static final long serialVersionUID = -764879047;
+    private static final long serialVersionUID = 456545318;
 
     /**
      * Setter for <code>ndt.t_financial_apply.id</code>. 主键
@@ -390,6 +390,36 @@ public class TFinancialApplyRecord extends UpdatableRecordImpl<TFinancialApplyRe
         return (BigDecimal) get(23);
     }
 
+    /**
+     * Setter for <code>ndt.t_financial_apply.apply_term_unit</code>. 申请期限单位
+     */
+    public TFinancialApplyRecord setApplyTermUnit(Integer value) {
+        set(24, value);
+        return this;
+    }
+
+    /**
+     * Getter for <code>ndt.t_financial_apply.apply_term_unit</code>. 申请期限单位
+     */
+    public Integer getApplyTermUnit() {
+        return (Integer) get(24);
+    }
+
+    /**
+     * Setter for <code>ndt.t_financial_apply.apply_amount_unit</code>. 申请金额单位
+     */
+    public TFinancialApplyRecord setApplyAmountUnit(Integer value) {
+        set(25, value);
+        return this;
+    }
+
+    /**
+     * Getter for <code>ndt.t_financial_apply.apply_amount_unit</code>. 申请金额单位
+     */
+    public Integer getApplyAmountUnit() {
+        return (Integer) get(25);
+    }
+
     // -------------------------------------------------------------------------
     // Primary key information
     // -------------------------------------------------------------------------
@@ -416,7 +446,7 @@ public class TFinancialApplyRecord extends UpdatableRecordImpl<TFinancialApplyRe
     /**
      * Create a detached, initialised TFinancialApplyRecord
      */
-    public TFinancialApplyRecord(BigDecimal id, BigDecimal userId, BigDecimal companyId, BigDecimal orgId, BigDecimal productId, BigDecimal amount, Integer period, Timestamp acceptTime, Timestamp lastUpdateTime, Integer state, BigDecimal createBy, Integer sourceId, BigDecimal diviisonId, String divisionName, BigDecimal acceptAmount, BigDecimal bankOrgId, Timestamp applyTime, Integer bankAcceptState, Integer bankAcceptPeriod, Integer applyPurpost, Integer applyTerm, String remark, Integer applyType, BigDecimal bankAcceptAmount) {
+    public TFinancialApplyRecord(BigDecimal id, BigDecimal userId, BigDecimal companyId, BigDecimal orgId, BigDecimal productId, BigDecimal amount, Integer period, Timestamp acceptTime, Timestamp lastUpdateTime, Integer state, BigDecimal createBy, Integer sourceId, BigDecimal diviisonId, String divisionName, BigDecimal acceptAmount, BigDecimal bankOrgId, Timestamp applyTime, Integer bankAcceptState, Integer bankAcceptPeriod, Integer applyPurpost, Integer applyTerm, String remark, Integer applyType, BigDecimal bankAcceptAmount, Integer applyTermUnit, Integer applyAmountUnit) {
         super(TFinancialApply.T_FINANCIAL_APPLY);
 
         set(0, id);
@@ -443,5 +473,7 @@ public class TFinancialApplyRecord extends UpdatableRecordImpl<TFinancialApplyRe
         set(21, remark);
         set(22, applyType);
         set(23, bankAcceptAmount);
+        set(24, applyTermUnit);
+        set(25, applyAmountUnit);
     }
 }

@@ -15,6 +15,7 @@ import java.util.List;
 import javax.annotation.Generated;
 
 import org.jooq.Field;
+import org.jooq.ForeignKey;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Schema;
@@ -38,7 +39,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class ActGeBytearray extends TableImpl<ActGeBytearrayRecord> {
 
-    private static final long serialVersionUID = 1040254910;
+    private static final long serialVersionUID = -1670251536;
 
     /**
      * The reference instance of <code>ndt.act_ge_bytearray</code>
@@ -142,6 +143,14 @@ public class ActGeBytearray extends TableImpl<ActGeBytearrayRecord> {
     @Override
     public List<UniqueKey<ActGeBytearrayRecord>> getKeys() {
         return Arrays.<UniqueKey<ActGeBytearrayRecord>>asList(Keys.ACT_GE_BYTEARRAY_PKEY);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<ForeignKey<ActGeBytearrayRecord, ?>> getReferences() {
+        return Arrays.<ForeignKey<ActGeBytearrayRecord, ?>>asList(Keys.ACT_GE_BYTEARRAY__ACT_FK_BYTEARR_DEPL);
     }
 
     /**

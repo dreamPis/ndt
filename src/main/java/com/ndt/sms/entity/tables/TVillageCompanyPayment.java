@@ -40,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TVillageCompanyPayment extends TableImpl<TVillageCompanyPaymentRecord> {
 
-    private static final long serialVersionUID = 168529487;
+    private static final long serialVersionUID = -957979542;
 
     /**
      * The reference instance of <code>ndt.t_village_company_payment</code>
@@ -124,6 +124,17 @@ public class TVillageCompanyPayment extends TableImpl<TVillageCompanyPaymentReco
      * The column <code>ndt.t_village_company_payment.update_time</code>.
      */
     public final TableField<TVillageCompanyPaymentRecord, Timestamp> UPDATE_TIME = createField("update_time", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
+
+    /**
+     * @deprecated Unknown data type. Please define an explicit {@link org.jooq.Binding} to specify how this type should be handled. Deprecation can be turned off using <deprecationOnUnknownTypes/> in your code generator configuration.
+     */
+    @java.lang.Deprecated
+    public final TableField<TVillageCompanyPaymentRecord, Object> PAY_INFO = createField("pay_info", org.jooq.impl.SQLDataType.OTHER, this, "缴费信息");
+
+    /**
+     * The column <code>ndt.t_village_company_payment.payment_img</code>. 缴费凭证
+     */
+    public final TableField<TVillageCompanyPaymentRecord, BigDecimal[]> PAYMENT_IMG = createField("payment_img", org.jooq.impl.SQLDataType.NUMERIC.getArrayDataType(), this, "缴费凭证");
 
     /**
      * Create a <code>ndt.t_village_company_payment</code> table reference

@@ -15,6 +15,7 @@ import java.util.List;
 import javax.annotation.Generated;
 
 import org.jooq.Field;
+import org.jooq.ForeignKey;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Schema;
@@ -38,7 +39,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class ActProcdefInfo extends TableImpl<ActProcdefInfoRecord> {
 
-    private static final long serialVersionUID = 298664647;
+    private static final long serialVersionUID = 48719903;
 
     /**
      * The reference instance of <code>ndt.act_procdef_info</code>
@@ -132,6 +133,14 @@ public class ActProcdefInfo extends TableImpl<ActProcdefInfoRecord> {
     @Override
     public List<UniqueKey<ActProcdefInfoRecord>> getKeys() {
         return Arrays.<UniqueKey<ActProcdefInfoRecord>>asList(Keys.ACT_PROCDEF_INFO_PKEY, Keys.ACT_UNIQ_INFO_PROCDEF);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<ForeignKey<ActProcdefInfoRecord, ?>> getReferences() {
+        return Arrays.<ForeignKey<ActProcdefInfoRecord, ?>>asList(Keys.ACT_PROCDEF_INFO__ACT_FK_INFO_PROCDEF, Keys.ACT_PROCDEF_INFO__ACT_FK_INFO_JSON_BA);
     }
 
     /**

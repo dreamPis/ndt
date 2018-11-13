@@ -7,6 +7,7 @@ package com.ndt.sms.entity.tables.pojos;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.Arrays;
 
 import javax.annotation.Generated;
 
@@ -24,22 +25,24 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class VillageCompanyPaymentPjo implements Serializable {
 
-    private static final long serialVersionUID = -1161401485;
+    private static final long serialVersionUID = -1317987473;
 
-    private BigDecimal id;
-    private BigDecimal villageCompanyInfoId;
-    private String     name;
-    private BigDecimal payAmt;
-    private String     payDate;
-    private String     payType;
-    private String     consumption;
-    private String     goodsNum;
-    private String     imgUrl;
-    private Short      status;
-    private BigDecimal createUser;
-    private Timestamp  createTime;
-    private BigDecimal updateUser;
-    private Timestamp  updateTime;
+    private BigDecimal   id;
+    private BigDecimal   villageCompanyInfoId;
+    private String       name;
+    private BigDecimal   payAmt;
+    private String       payDate;
+    private String       payType;
+    private String       consumption;
+    private String       goodsNum;
+    private String       imgUrl;
+    private Short        status;
+    private BigDecimal   createUser;
+    private Timestamp    createTime;
+    private BigDecimal   updateUser;
+    private Timestamp    updateTime;
+    private Object       payInfo;
+    private BigDecimal[] paymentImg;
 
     public VillageCompanyPaymentPjo() {}
 
@@ -58,23 +61,27 @@ public class VillageCompanyPaymentPjo implements Serializable {
         this.createTime = value.createTime;
         this.updateUser = value.updateUser;
         this.updateTime = value.updateTime;
+        this.payInfo = value.payInfo;
+        this.paymentImg = value.paymentImg;
     }
 
     public VillageCompanyPaymentPjo(
-        BigDecimal id,
-        BigDecimal villageCompanyInfoId,
-        String     name,
-        BigDecimal payAmt,
-        String     payDate,
-        String     payType,
-        String     consumption,
-        String     goodsNum,
-        String     imgUrl,
-        Short      status,
-        BigDecimal createUser,
-        Timestamp  createTime,
-        BigDecimal updateUser,
-        Timestamp  updateTime
+        BigDecimal   id,
+        BigDecimal   villageCompanyInfoId,
+        String       name,
+        BigDecimal   payAmt,
+        String       payDate,
+        String       payType,
+        String       consumption,
+        String       goodsNum,
+        String       imgUrl,
+        Short        status,
+        BigDecimal   createUser,
+        Timestamp    createTime,
+        BigDecimal   updateUser,
+        Timestamp    updateTime,
+        Object       payInfo,
+        BigDecimal[] paymentImg
     ) {
         this.id = id;
         this.villageCompanyInfoId = villageCompanyInfoId;
@@ -90,6 +97,8 @@ public class VillageCompanyPaymentPjo implements Serializable {
         this.createTime = createTime;
         this.updateUser = updateUser;
         this.updateTime = updateTime;
+        this.payInfo = payInfo;
+        this.paymentImg = paymentImg;
     }
 
     public BigDecimal getId() {
@@ -218,6 +227,34 @@ public class VillageCompanyPaymentPjo implements Serializable {
         return this;
     }
 
+
+    /**
+     * @deprecated Unknown data type. Please define an explicit {@link org.jooq.Binding} to specify how this type should be handled. Deprecation can be turned off using <deprecationOnUnknownTypes/> in your code generator configuration.
+     */
+    @java.lang.Deprecated
+    public Object getPayInfo() {
+        return this.payInfo;
+    }
+
+
+    /**
+     * @deprecated Unknown data type. Please define an explicit {@link org.jooq.Binding} to specify how this type should be handled. Deprecation can be turned off using <deprecationOnUnknownTypes/> in your code generator configuration.
+     */
+    @java.lang.Deprecated
+    public VillageCompanyPaymentPjo setPayInfo(Object payInfo) {
+        this.payInfo = payInfo;
+        return this;
+    }
+
+    public BigDecimal[] getPaymentImg() {
+        return this.paymentImg;
+    }
+
+    public VillageCompanyPaymentPjo setPaymentImg(BigDecimal... paymentImg) {
+        this.paymentImg = paymentImg;
+        return this;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("VillageCompanyPaymentPjo (");
@@ -236,6 +273,8 @@ public class VillageCompanyPaymentPjo implements Serializable {
         sb.append(", ").append(createTime);
         sb.append(", ").append(updateUser);
         sb.append(", ").append(updateTime);
+        sb.append(", ").append(payInfo);
+        sb.append(", ").append(Arrays.toString(paymentImg));
 
         sb.append(")");
         return sb.toString();

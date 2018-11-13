@@ -7,6 +7,7 @@ package com.ndt.sms.entity.tables.pojos;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.Arrays;
 
 import javax.annotation.Generated;
 
@@ -24,19 +25,20 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class VillageCompanyPurchasePjo implements Serializable {
 
-    private static final long serialVersionUID = 1987810676;
+    private static final long serialVersionUID = 1426136517;
 
-    private BigDecimal id;
-    private BigDecimal villageCompanyInfoId;
-    private String     purchaseMaterial;
-    private BigDecimal purchaseAmt;
-    private String     purchaseDate;
-    private String     imgUrl;
-    private Short      status;
-    private BigDecimal createUser;
-    private Timestamp  createTime;
-    private BigDecimal updateUser;
-    private Timestamp  updateTime;
+    private BigDecimal   id;
+    private BigDecimal   villageCompanyInfoId;
+    private String       purchaseMaterial;
+    private BigDecimal   purchaseAmt;
+    private String       purchaseDate;
+    private String       imgUrl;
+    private Short        status;
+    private BigDecimal   createUser;
+    private Timestamp    createTime;
+    private BigDecimal   updateUser;
+    private Timestamp    updateTime;
+    private BigDecimal[] purchaseUrl;
 
     public VillageCompanyPurchasePjo() {}
 
@@ -52,20 +54,22 @@ public class VillageCompanyPurchasePjo implements Serializable {
         this.createTime = value.createTime;
         this.updateUser = value.updateUser;
         this.updateTime = value.updateTime;
+        this.purchaseUrl = value.purchaseUrl;
     }
 
     public VillageCompanyPurchasePjo(
-        BigDecimal id,
-        BigDecimal villageCompanyInfoId,
-        String     purchaseMaterial,
-        BigDecimal purchaseAmt,
-        String     purchaseDate,
-        String     imgUrl,
-        Short      status,
-        BigDecimal createUser,
-        Timestamp  createTime,
-        BigDecimal updateUser,
-        Timestamp  updateTime
+        BigDecimal   id,
+        BigDecimal   villageCompanyInfoId,
+        String       purchaseMaterial,
+        BigDecimal   purchaseAmt,
+        String       purchaseDate,
+        String       imgUrl,
+        Short        status,
+        BigDecimal   createUser,
+        Timestamp    createTime,
+        BigDecimal   updateUser,
+        Timestamp    updateTime,
+        BigDecimal[] purchaseUrl
     ) {
         this.id = id;
         this.villageCompanyInfoId = villageCompanyInfoId;
@@ -78,6 +82,7 @@ public class VillageCompanyPurchasePjo implements Serializable {
         this.createTime = createTime;
         this.updateUser = updateUser;
         this.updateTime = updateTime;
+        this.purchaseUrl = purchaseUrl;
     }
 
     public BigDecimal getId() {
@@ -179,6 +184,15 @@ public class VillageCompanyPurchasePjo implements Serializable {
         return this;
     }
 
+    public BigDecimal[] getPurchaseUrl() {
+        return this.purchaseUrl;
+    }
+
+    public VillageCompanyPurchasePjo setPurchaseUrl(BigDecimal... purchaseUrl) {
+        this.purchaseUrl = purchaseUrl;
+        return this;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("VillageCompanyPurchasePjo (");
@@ -194,6 +208,7 @@ public class VillageCompanyPurchasePjo implements Serializable {
         sb.append(", ").append(createTime);
         sb.append(", ").append(updateUser);
         sb.append(", ").append(updateTime);
+        sb.append(", ").append(Arrays.toString(purchaseUrl));
 
         sb.append(")");
         return sb.toString();
