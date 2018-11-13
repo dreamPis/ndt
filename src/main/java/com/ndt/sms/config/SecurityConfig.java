@@ -7,7 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -24,6 +26,8 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
  * @Desc：
  */
 @Configuration
+@EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true) //开启security注解
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -67,11 +71,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().anyRequest().fullyAuthenticated();
 //        http.formLogin().loginPage("/login").failureUrl("/login?error").permitAll();
-        http.formLogin()          // 定义当需要用户登录时候，转到的登录页面。
-                .and()
-                .authorizeRequests()    // 定义哪些URL需要被保护、哪些不需要被保护
-                .anyRequest()        // 任何请求,登录后可以访问
-                .authenticated();
-        http.logout().permitAll();
+        http// 设置不需要鉴权的目录
+                .authorizeRequests()
+                // 允许访问
+                .antMatchers("/oauth/**").permitAll()
+                // 这里添加需要完整认证才能访问
+                .antMatchers("/user/**").fullyAuthenticated()
+                // 除了上述路径，其余均需要鉴权后才能访问
+                .and().authorizeRequests().anyRequest().authenticated()
+                // 设置登录页和默认的跳转路径
+                .and().formLogin()
+                // 开启基本鉴权
+                .and().httpBasic()
+                // 记住登陆
+                .and().rememberMe();
     }
 }

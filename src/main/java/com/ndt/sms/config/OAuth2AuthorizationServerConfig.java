@@ -31,6 +31,7 @@ import java.util.List;
 @EnableAuthorizationServer
 public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
+    @Qualifier("dataSource")
     @Autowired
     private DataSource dataSource;
     @Autowired
@@ -71,13 +72,15 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.jdbc(dataSource).withClient("ndt")
+        clients.inMemory()
+                .withClient("ndt")
                 .secret(passwordEncoder.encode("ndt"))
+                .resourceIds("api")
                 .accessTokenValiditySeconds(7200)
                 .refreshTokenValiditySeconds(60 * 60 * 24)
                 .authorizedGrantTypes("refresh_token", "password", "authorization_code")
                 .redirectUris("http://www.ndtcd.cn/")
-                .scopes("all");
+                .scopes("read");
     }
 
     @Override
