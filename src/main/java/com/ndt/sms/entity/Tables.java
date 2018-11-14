@@ -33,15 +33,10 @@ import com.ndt.sms.entity.tables.CAdminDivision;
 import com.ndt.sms.entity.tables.CDictMapping;
 import com.ndt.sms.entity.tables.CDictType;
 import com.ndt.sms.entity.tables.CSensitiveWords;
-import com.ndt.sms.entity.tables.Clientdetails;
 import com.ndt.sms.entity.tables.MtMessageAccepter;
 import com.ndt.sms.entity.tables.MtRoleMenu;
 import com.ndt.sms.entity.tables.MtUserRole;
 import com.ndt.sms.entity.tables.OauthAccessToken;
-import com.ndt.sms.entity.tables.OauthApprovals;
-import com.ndt.sms.entity.tables.OauthClientDetails;
-import com.ndt.sms.entity.tables.OauthClientToken;
-import com.ndt.sms.entity.tables.OauthCode;
 import com.ndt.sms.entity.tables.OauthRefreshToken;
 import com.ndt.sms.entity.tables.TAdvert;
 import com.ndt.sms.entity.tables.TAdvertBak;
@@ -356,11 +351,6 @@ public class Tables {
     public static final CSensitiveWords C_SENSITIVE_WORDS = com.ndt.sms.entity.tables.CSensitiveWords.C_SENSITIVE_WORDS;
 
     /**
-     * The table <code>ndt.clientdetails</code>.
-     */
-    public static final Clientdetails CLIENTDETAILS = com.ndt.sms.entity.tables.Clientdetails.CLIENTDETAILS;
-
-    /**
      * 消息接收者表
      */
     public static final MtMessageAccepter MT_MESSAGE_ACCEPTER = com.ndt.sms.entity.tables.MtMessageAccepter.MT_MESSAGE_ACCEPTER;
@@ -379,26 +369,6 @@ public class Tables {
      * The table <code>ndt.oauth_access_token</code>.
      */
     public static final OauthAccessToken OAUTH_ACCESS_TOKEN = com.ndt.sms.entity.tables.OauthAccessToken.OAUTH_ACCESS_TOKEN;
-
-    /**
-     * The table <code>ndt.oauth_approvals</code>.
-     */
-    public static final OauthApprovals OAUTH_APPROVALS = com.ndt.sms.entity.tables.OauthApprovals.OAUTH_APPROVALS;
-
-    /**
-     * The table <code>ndt.oauth_client_details</code>.
-     */
-    public static final OauthClientDetails OAUTH_CLIENT_DETAILS = com.ndt.sms.entity.tables.OauthClientDetails.OAUTH_CLIENT_DETAILS;
-
-    /**
-     * The table <code>ndt.oauth_client_token</code>.
-     */
-    public static final OauthClientToken OAUTH_CLIENT_TOKEN = com.ndt.sms.entity.tables.OauthClientToken.OAUTH_CLIENT_TOKEN;
-
-    /**
-     * The table <code>ndt.oauth_code</code>.
-     */
-    public static final OauthCode OAUTH_CODE = com.ndt.sms.entity.tables.OauthCode.OAUTH_CODE;
 
     /**
      * The table <code>ndt.oauth_refresh_token</code>.

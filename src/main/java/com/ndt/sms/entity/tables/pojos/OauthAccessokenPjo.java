@@ -5,6 +5,7 @@ package com.ndt.sms.entity.tables.pojos;
 
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 import javax.annotation.Generated;
 
@@ -22,19 +23,21 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class OauthAccessokenPjo implements Serializable {
 
-    private static final long serialVersionUID = 1686735139;
+    private static final long serialVersionUID = -1517593290;
 
-    private String tokenId;
-    private byte[] token;
-    private String authenticationId;
-    private String userName;
-    private String clientId;
-    private byte[] authentication;
-    private String refreshToken;
+    private Timestamp createTime;
+    private String    tokenId;
+    private byte[]    token;
+    private String    authenticationId;
+    private String    userName;
+    private String    clientId;
+    private byte[]    authentication;
+    private String    refreshToken;
 
     public OauthAccessokenPjo() {}
 
     public OauthAccessokenPjo(OauthAccessokenPjo value) {
+        this.createTime = value.createTime;
         this.tokenId = value.tokenId;
         this.token = value.token;
         this.authenticationId = value.authenticationId;
@@ -45,14 +48,16 @@ public class OauthAccessokenPjo implements Serializable {
     }
 
     public OauthAccessokenPjo(
-        String tokenId,
-        byte[] token,
-        String authenticationId,
-        String userName,
-        String clientId,
-        byte[] authentication,
-        String refreshToken
+        Timestamp createTime,
+        String    tokenId,
+        byte[]    token,
+        String    authenticationId,
+        String    userName,
+        String    clientId,
+        byte[]    authentication,
+        String    refreshToken
     ) {
+        this.createTime = createTime;
         this.tokenId = tokenId;
         this.token = token;
         this.authenticationId = authenticationId;
@@ -60,6 +65,15 @@ public class OauthAccessokenPjo implements Serializable {
         this.clientId = clientId;
         this.authentication = authentication;
         this.refreshToken = refreshToken;
+    }
+
+    public Timestamp getCreateTime() {
+        return this.createTime;
+    }
+
+    public OauthAccessokenPjo setCreateTime(Timestamp createTime) {
+        this.createTime = createTime;
+        return this;
     }
 
     public String getTokenId() {
@@ -129,7 +143,8 @@ public class OauthAccessokenPjo implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder("OauthAccessokenPjo (");
 
-        sb.append(tokenId);
+        sb.append(createTime);
+        sb.append(", ").append(tokenId);
         sb.append(", ").append("[binary...]");
         sb.append(", ").append(authenticationId);
         sb.append(", ").append(userName);

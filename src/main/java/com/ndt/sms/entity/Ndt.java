@@ -33,15 +33,10 @@ import com.ndt.sms.entity.tables.CAdminDivision;
 import com.ndt.sms.entity.tables.CDictMapping;
 import com.ndt.sms.entity.tables.CDictType;
 import com.ndt.sms.entity.tables.CSensitiveWords;
-import com.ndt.sms.entity.tables.Clientdetails;
 import com.ndt.sms.entity.tables.MtMessageAccepter;
 import com.ndt.sms.entity.tables.MtRoleMenu;
 import com.ndt.sms.entity.tables.MtUserRole;
 import com.ndt.sms.entity.tables.OauthAccessToken;
-import com.ndt.sms.entity.tables.OauthApprovals;
-import com.ndt.sms.entity.tables.OauthClientDetails;
-import com.ndt.sms.entity.tables.OauthClientToken;
-import com.ndt.sms.entity.tables.OauthCode;
 import com.ndt.sms.entity.tables.OauthRefreshToken;
 import com.ndt.sms.entity.tables.TAdvert;
 import com.ndt.sms.entity.tables.TAdvertBak;
@@ -219,7 +214,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Ndt extends SchemaImpl {
 
-    private static final long serialVersionUID = -1157581332;
+    private static final long serialVersionUID = 581059465;
 
     /**
      * The reference instance of <code>ndt</code>
@@ -372,11 +367,6 @@ public class Ndt extends SchemaImpl {
     public final CSensitiveWords C_SENSITIVE_WORDS = com.ndt.sms.entity.tables.CSensitiveWords.C_SENSITIVE_WORDS;
 
     /**
-     * The table <code>ndt.clientdetails</code>.
-     */
-    public final Clientdetails CLIENTDETAILS = com.ndt.sms.entity.tables.Clientdetails.CLIENTDETAILS;
-
-    /**
      * 消息接收者表
      */
     public final MtMessageAccepter MT_MESSAGE_ACCEPTER = com.ndt.sms.entity.tables.MtMessageAccepter.MT_MESSAGE_ACCEPTER;
@@ -395,26 +385,6 @@ public class Ndt extends SchemaImpl {
      * The table <code>ndt.oauth_access_token</code>.
      */
     public final OauthAccessToken OAUTH_ACCESS_TOKEN = com.ndt.sms.entity.tables.OauthAccessToken.OAUTH_ACCESS_TOKEN;
-
-    /**
-     * The table <code>ndt.oauth_approvals</code>.
-     */
-    public final OauthApprovals OAUTH_APPROVALS = com.ndt.sms.entity.tables.OauthApprovals.OAUTH_APPROVALS;
-
-    /**
-     * The table <code>ndt.oauth_client_details</code>.
-     */
-    public final OauthClientDetails OAUTH_CLIENT_DETAILS = com.ndt.sms.entity.tables.OauthClientDetails.OAUTH_CLIENT_DETAILS;
-
-    /**
-     * The table <code>ndt.oauth_client_token</code>.
-     */
-    public final OauthClientToken OAUTH_CLIENT_TOKEN = com.ndt.sms.entity.tables.OauthClientToken.OAUTH_CLIENT_TOKEN;
-
-    /**
-     * The table <code>ndt.oauth_code</code>.
-     */
-    public final OauthCode OAUTH_CODE = com.ndt.sms.entity.tables.OauthCode.OAUTH_CODE;
 
     /**
      * The table <code>ndt.oauth_refresh_token</code>.
@@ -1245,15 +1215,10 @@ public class Ndt extends SchemaImpl {
             CDictMapping.C_DICT_MAPPING,
             CDictType.C_DICT_TYPE,
             CSensitiveWords.C_SENSITIVE_WORDS,
-            Clientdetails.CLIENTDETAILS,
             MtMessageAccepter.MT_MESSAGE_ACCEPTER,
             MtRoleMenu.MT_ROLE_MENU,
             MtUserRole.MT_USER_ROLE,
             OauthAccessToken.OAUTH_ACCESS_TOKEN,
-            OauthApprovals.OAUTH_APPROVALS,
-            OauthClientDetails.OAUTH_CLIENT_DETAILS,
-            OauthClientToken.OAUTH_CLIENT_TOKEN,
-            OauthCode.OAUTH_CODE,
             OauthRefreshToken.OAUTH_REFRESH_TOKEN,
             TAdvert.T_ADVERT,
             TAdvertBak.T_ADVERT_BAK,

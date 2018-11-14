@@ -5,6 +5,7 @@ package com.ndt.sms.entity.tables.pojos;
 
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 import javax.annotation.Generated;
 
@@ -22,28 +23,41 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class OauthRefreshokenPjo implements Serializable {
 
-    private static final long serialVersionUID = -2001431549;
+    private static final long serialVersionUID = 951086137;
 
-    private String tokenId;
-    private byte[] token;
-    private byte[] authentication;
+    private Timestamp createTime;
+    private String    tokenId;
+    private byte[]    token;
+    private byte[]    authentication;
 
     public OauthRefreshokenPjo() {}
 
     public OauthRefreshokenPjo(OauthRefreshokenPjo value) {
+        this.createTime = value.createTime;
         this.tokenId = value.tokenId;
         this.token = value.token;
         this.authentication = value.authentication;
     }
 
     public OauthRefreshokenPjo(
-        String tokenId,
-        byte[] token,
-        byte[] authentication
+        Timestamp createTime,
+        String    tokenId,
+        byte[]    token,
+        byte[]    authentication
     ) {
+        this.createTime = createTime;
         this.tokenId = tokenId;
         this.token = token;
         this.authentication = authentication;
+    }
+
+    public Timestamp getCreateTime() {
+        return this.createTime;
+    }
+
+    public OauthRefreshokenPjo setCreateTime(Timestamp createTime) {
+        this.createTime = createTime;
+        return this;
     }
 
     public String getTokenId() {
@@ -77,7 +91,8 @@ public class OauthRefreshokenPjo implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder("OauthRefreshokenPjo (");
 
-        sb.append(tokenId);
+        sb.append(createTime);
+        sb.append(", ").append(tokenId);
         sb.append(", ").append("[binary...]");
         sb.append(", ").append("[binary...]");
 

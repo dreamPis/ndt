@@ -4,23 +4,18 @@
 package com.ndt.sms.entity.tables;
 
 
-import com.ndt.sms.entity.Indexes;
-import com.ndt.sms.entity.Keys;
 import com.ndt.sms.entity.Ndt;
 import com.ndt.sms.entity.tables.records.OauthAccessTokenRecord;
 
-import java.util.Arrays;
-import java.util.List;
+import java.sql.Timestamp;
 
 import javax.annotation.Generated;
 
 import org.jooq.Field;
-import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Schema;
 import org.jooq.Table;
 import org.jooq.TableField;
-import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
 import org.jooq.impl.TableImpl;
 
@@ -38,7 +33,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class OauthAccessToken extends TableImpl<OauthAccessTokenRecord> {
 
-    private static final long serialVersionUID = -1194386300;
+    private static final long serialVersionUID = -2045475265;
 
     /**
      * The reference instance of <code>ndt.oauth_access_token</code>
@@ -54,39 +49,44 @@ public class OauthAccessToken extends TableImpl<OauthAccessTokenRecord> {
     }
 
     /**
-     * The column <code>ndt.oauth_access_token.token_id</code>. 该字段的值是将access_token的值通过MD5加密后存储的
+     * The column <code>ndt.oauth_access_token.create_time</code>.
      */
-    public final TableField<OauthAccessTokenRecord, String> TOKEN_ID = createField("token_id", org.jooq.impl.SQLDataType.VARCHAR(256), this, "该字段的值是将access_token的值通过MD5加密后存储的");
+    public final TableField<OauthAccessTokenRecord, Timestamp> CREATE_TIME = createField("create_time", org.jooq.impl.SQLDataType.TIMESTAMP.defaultValue(org.jooq.impl.DSL.field("now()", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
 
     /**
-     * The column <code>ndt.oauth_access_token.token</code>. 同oauth_client_token表
+     * The column <code>ndt.oauth_access_token.token_id</code>.
      */
-    public final TableField<OauthAccessTokenRecord, byte[]> TOKEN = createField("token", org.jooq.impl.SQLDataType.BLOB, this, "同oauth_client_token表");
+    public final TableField<OauthAccessTokenRecord, String> TOKEN_ID = createField("token_id", org.jooq.impl.SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>ndt.oauth_access_token.authentication_id</code>. 同oauth_client_token表
+     * The column <code>ndt.oauth_access_token.token</code>.
      */
-    public final TableField<OauthAccessTokenRecord, String> AUTHENTICATION_ID = createField("authentication_id", org.jooq.impl.SQLDataType.VARCHAR(256).nullable(false), this, "同oauth_client_token表");
+    public final TableField<OauthAccessTokenRecord, byte[]> TOKEN = createField("token", org.jooq.impl.SQLDataType.BLOB, this, "");
 
     /**
-     * The column <code>ndt.oauth_access_token.user_name</code>. 同oauth_client_token表
+     * The column <code>ndt.oauth_access_token.authentication_id</code>.
      */
-    public final TableField<OauthAccessTokenRecord, String> USER_NAME = createField("user_name", org.jooq.impl.SQLDataType.VARCHAR(256), this, "同oauth_client_token表");
+    public final TableField<OauthAccessTokenRecord, String> AUTHENTICATION_ID = createField("authentication_id", org.jooq.impl.SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>ndt.oauth_access_token.client_id</code>. 同oauth_client_token表
+     * The column <code>ndt.oauth_access_token.user_name</code>.
      */
-    public final TableField<OauthAccessTokenRecord, String> CLIENT_ID = createField("client_id", org.jooq.impl.SQLDataType.VARCHAR(256), this, "同oauth_client_token表");
+    public final TableField<OauthAccessTokenRecord, String> USER_NAME = createField("user_name", org.jooq.impl.SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>ndt.oauth_access_token.authentication</code>. 存储将OAuth2Authentication.java对象序列化后的二进制数据.
+     * The column <code>ndt.oauth_access_token.client_id</code>.
      */
-    public final TableField<OauthAccessTokenRecord, byte[]> AUTHENTICATION = createField("authentication", org.jooq.impl.SQLDataType.BLOB, this, "存储将OAuth2Authentication.java对象序列化后的二进制数据.");
+    public final TableField<OauthAccessTokenRecord, String> CLIENT_ID = createField("client_id", org.jooq.impl.SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>ndt.oauth_access_token.refresh_token</code>. 该字段的值是将refresh_token的值通过MD5加密后存储的.
+     * The column <code>ndt.oauth_access_token.authentication</code>.
      */
-    public final TableField<OauthAccessTokenRecord, String> REFRESH_TOKEN = createField("refresh_token", org.jooq.impl.SQLDataType.VARCHAR(256), this, "该字段的值是将refresh_token的值通过MD5加密后存储的.");
+    public final TableField<OauthAccessTokenRecord, byte[]> AUTHENTICATION = createField("authentication", org.jooq.impl.SQLDataType.BLOB, this, "");
+
+    /**
+     * The column <code>ndt.oauth_access_token.refresh_token</code>.
+     */
+    public final TableField<OauthAccessTokenRecord, String> REFRESH_TOKEN = createField("refresh_token", org.jooq.impl.SQLDataType.VARCHAR(255), this, "");
 
     /**
      * Create a <code>ndt.oauth_access_token</code> table reference
@@ -123,30 +123,6 @@ public class OauthAccessToken extends TableImpl<OauthAccessTokenRecord> {
     @Override
     public Schema getSchema() {
         return Ndt.NDT;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public List<Index> getIndexes() {
-        return Arrays.<Index>asList(Indexes.AUTHENTICATION_ID_INDEX, Indexes.CLIENT_ID_INDEX, Indexes.OAUTH_ACCESS_TOKEN_PKEY, Indexes.REFRESH_TOKEN_INDEX, Indexes.TOKEN_ID_INDEX, Indexes.USER_NAME_INDEX);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public UniqueKey<OauthAccessTokenRecord> getPrimaryKey() {
-        return Keys.OAUTH_ACCESS_TOKEN_PKEY;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public List<UniqueKey<OauthAccessTokenRecord>> getKeys() {
-        return Arrays.<UniqueKey<OauthAccessTokenRecord>>asList(Keys.OAUTH_ACCESS_TOKEN_PKEY);
     }
 
     /**

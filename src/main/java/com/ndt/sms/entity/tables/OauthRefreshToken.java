@@ -7,6 +7,8 @@ package com.ndt.sms.entity.tables;
 import com.ndt.sms.entity.Ndt;
 import com.ndt.sms.entity.tables.records.OauthRefreshTokenRecord;
 
+import java.sql.Timestamp;
+
 import javax.annotation.Generated;
 
 import org.jooq.Field;
@@ -31,7 +33,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class OauthRefreshToken extends TableImpl<OauthRefreshTokenRecord> {
 
-    private static final long serialVersionUID = -1426057009;
+    private static final long serialVersionUID = 163046432;
 
     /**
      * The reference instance of <code>ndt.oauth_refresh_token</code>
@@ -47,9 +49,14 @@ public class OauthRefreshToken extends TableImpl<OauthRefreshTokenRecord> {
     }
 
     /**
+     * The column <code>ndt.oauth_refresh_token.create_time</code>.
+     */
+    public final TableField<OauthRefreshTokenRecord, Timestamp> CREATE_TIME = createField("create_time", org.jooq.impl.SQLDataType.TIMESTAMP.defaultValue(org.jooq.impl.DSL.field("now()", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+
+    /**
      * The column <code>ndt.oauth_refresh_token.token_id</code>.
      */
-    public final TableField<OauthRefreshTokenRecord, String> TOKEN_ID = createField("token_id", org.jooq.impl.SQLDataType.VARCHAR(256), this, "");
+    public final TableField<OauthRefreshTokenRecord, String> TOKEN_ID = createField("token_id", org.jooq.impl.SQLDataType.VARCHAR(255), this, "");
 
     /**
      * The column <code>ndt.oauth_refresh_token.token</code>.
