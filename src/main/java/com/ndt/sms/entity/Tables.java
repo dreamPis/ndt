@@ -37,6 +37,8 @@ import com.ndt.sms.entity.tables.MtMessageAccepter;
 import com.ndt.sms.entity.tables.MtRoleMenu;
 import com.ndt.sms.entity.tables.MtUserRole;
 import com.ndt.sms.entity.tables.OauthAccessToken;
+import com.ndt.sms.entity.tables.OauthClientDetails;
+import com.ndt.sms.entity.tables.OauthCode;
 import com.ndt.sms.entity.tables.OauthRefreshToken;
 import com.ndt.sms.entity.tables.TAdvert;
 import com.ndt.sms.entity.tables.TAdvertBak;
@@ -369,6 +371,16 @@ public class Tables {
      * The table <code>ndt.oauth_access_token</code>.
      */
     public static final OauthAccessToken OAUTH_ACCESS_TOKEN = com.ndt.sms.entity.tables.OauthAccessToken.OAUTH_ACCESS_TOKEN;
+
+    /**
+     * The table <code>ndt.oauth_client_details</code>.
+     */
+    public static final OauthClientDetails OAUTH_CLIENT_DETAILS = com.ndt.sms.entity.tables.OauthClientDetails.OAUTH_CLIENT_DETAILS;
+
+    /**
+     * The table <code>ndt.oauth_code</code>.
+     */
+    public static final OauthCode OAUTH_CODE = com.ndt.sms.entity.tables.OauthCode.OAUTH_CODE;
 
     /**
      * The table <code>ndt.oauth_refresh_token</code>.

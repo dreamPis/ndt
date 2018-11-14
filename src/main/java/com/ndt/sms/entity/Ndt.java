@@ -37,6 +37,8 @@ import com.ndt.sms.entity.tables.MtMessageAccepter;
 import com.ndt.sms.entity.tables.MtRoleMenu;
 import com.ndt.sms.entity.tables.MtUserRole;
 import com.ndt.sms.entity.tables.OauthAccessToken;
+import com.ndt.sms.entity.tables.OauthClientDetails;
+import com.ndt.sms.entity.tables.OauthCode;
 import com.ndt.sms.entity.tables.OauthRefreshToken;
 import com.ndt.sms.entity.tables.TAdvert;
 import com.ndt.sms.entity.tables.TAdvertBak;
@@ -214,7 +216,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Ndt extends SchemaImpl {
 
-    private static final long serialVersionUID = 581059465;
+    private static final long serialVersionUID = -1041210487;
 
     /**
      * The reference instance of <code>ndt</code>
@@ -385,6 +387,16 @@ public class Ndt extends SchemaImpl {
      * The table <code>ndt.oauth_access_token</code>.
      */
     public final OauthAccessToken OAUTH_ACCESS_TOKEN = com.ndt.sms.entity.tables.OauthAccessToken.OAUTH_ACCESS_TOKEN;
+
+    /**
+     * The table <code>ndt.oauth_client_details</code>.
+     */
+    public final OauthClientDetails OAUTH_CLIENT_DETAILS = com.ndt.sms.entity.tables.OauthClientDetails.OAUTH_CLIENT_DETAILS;
+
+    /**
+     * The table <code>ndt.oauth_code</code>.
+     */
+    public final OauthCode OAUTH_CODE = com.ndt.sms.entity.tables.OauthCode.OAUTH_CODE;
 
     /**
      * The table <code>ndt.oauth_refresh_token</code>.
@@ -1219,6 +1231,8 @@ public class Ndt extends SchemaImpl {
             MtRoleMenu.MT_ROLE_MENU,
             MtUserRole.MT_USER_ROLE,
             OauthAccessToken.OAUTH_ACCESS_TOKEN,
+            OauthClientDetails.OAUTH_CLIENT_DETAILS,
+            OauthCode.OAUTH_CODE,
             OauthRefreshToken.OAUTH_REFRESH_TOKEN,
             TAdvert.T_ADVERT,
             TAdvertBak.T_ADVERT_BAK,

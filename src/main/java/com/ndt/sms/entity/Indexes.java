@@ -36,6 +36,7 @@ import com.ndt.sms.entity.tables.CSensitiveWords;
 import com.ndt.sms.entity.tables.MtMessageAccepter;
 import com.ndt.sms.entity.tables.MtRoleMenu;
 import com.ndt.sms.entity.tables.MtUserRole;
+import com.ndt.sms.entity.tables.OauthClientDetails;
 import com.ndt.sms.entity.tables.TAdvert;
 import com.ndt.sms.entity.tables.TAdvertBak;
 import com.ndt.sms.entity.tables.TAppVersion;
@@ -291,6 +292,7 @@ public class Indexes {
     public static final Index MT_MESSAGE_ACCEPTER_PKEY = Indexes0.MT_MESSAGE_ACCEPTER_PKEY;
     public static final Index MT_ROLE_MENU_PKEY = Indexes0.MT_ROLE_MENU_PKEY;
     public static final Index MT_USER_ROLE_PKEY = Indexes0.MT_USER_ROLE_PKEY;
+    public static final Index OAUTH_CLIENT_DETAILS_PKEY = Indexes0.OAUTH_CLIENT_DETAILS_PKEY;
     public static final Index PK_T_ADVERT = Indexes0.PK_T_ADVERT;
     public static final Index PK_T_ADVERT_BAK = Indexes0.PK_T_ADVERT_BAK;
     public static final Index T_APP_VERSION_PKEY = Indexes0.T_APP_VERSION_PKEY;
@@ -536,6 +538,7 @@ public class Indexes {
         public static Index MT_MESSAGE_ACCEPTER_PKEY = Internal.createIndex("mt_message_accepter_pkey", MtMessageAccepter.MT_MESSAGE_ACCEPTER, new OrderField[] { MtMessageAccepter.MT_MESSAGE_ACCEPTER.ID }, true);
         public static Index MT_ROLE_MENU_PKEY = Internal.createIndex("mt_role_menu_pkey", MtRoleMenu.MT_ROLE_MENU, new OrderField[] { MtRoleMenu.MT_ROLE_MENU.ID }, true);
         public static Index MT_USER_ROLE_PKEY = Internal.createIndex("mt_user_role_pkey", MtUserRole.MT_USER_ROLE, new OrderField[] { MtUserRole.MT_USER_ROLE.ID }, true);
+        public static Index OAUTH_CLIENT_DETAILS_PKEY = Internal.createIndex("oauth_client_details_pkey", OauthClientDetails.OAUTH_CLIENT_DETAILS, new OrderField[] { OauthClientDetails.OAUTH_CLIENT_DETAILS.CLIENT_ID }, true);
         public static Index PK_T_ADVERT = Internal.createIndex("pk_t_advert", TAdvert.T_ADVERT, new OrderField[] { TAdvert.T_ADVERT.ID }, true);
         public static Index PK_T_ADVERT_BAK = Internal.createIndex("pk_t_advert_bak", TAdvertBak.T_ADVERT_BAK, new OrderField[] { TAdvertBak.T_ADVERT_BAK.ID }, true);
         public static Index T_APP_VERSION_PKEY = Internal.createIndex("t_app_version_pkey", TAppVersion.T_APP_VERSION, new OrderField[] { TAppVersion.T_APP_VERSION.ID }, true);
