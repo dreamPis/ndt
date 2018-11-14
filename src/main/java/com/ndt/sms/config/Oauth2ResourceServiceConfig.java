@@ -31,10 +31,6 @@ public class Oauth2ResourceServiceConfig extends ResourceServerConfigurerAdapter
                 .authorizeRequests()
                 // 允许访问
                 .antMatchers("/", "/oauth/**").permitAll()
-                // swagger
-                .antMatchers("/swagger-ui.html", "/swagger-resources", "/swagger-resources/**", "/v2/api-docs",
-                        "/webjars/**")
-                .permitAll()
                 // 允许静态资源
                 .antMatchers("/assets/").permitAll()
                 // 这里添加需要完整认证才能访问
