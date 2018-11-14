@@ -27,22 +27,10 @@ public class Oauth2ResourceServiceConfig extends ResourceServerConfigurerAdapter
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http// 设置不需要鉴权的目录
+        http
                 .authorizeRequests()
-                // 允许访问
-                .antMatchers("/", "/oauth/**").permitAll()
-                // 允许静态资源
-                .antMatchers("/assets/").permitAll()
-                // 这里添加需要完整认证才能访问
-                // .antMatchers("").fullyAuthenticated()
-                // 除了上述路径，其余均需要鉴权后才能访问
-                .and().authorizeRequests().anyRequest().authenticated()
-                // 设置登录页和默认的跳转路径
-                .and().formLogin()
-                // 开启基本鉴权
-                .and().httpBasic()
-                // 记住登陆
-                .and().rememberMe();
+                .anyRequest()
+                .authenticated();
     }
 
 }
