@@ -75,6 +75,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 // 允许访问
                 .antMatchers("/oauth/**").permitAll()
+                .antMatchers("/face/**").permitAll()
                 // 这里添加需要完整认证才能访问
                 .antMatchers("/user/**").fullyAuthenticated()
                 // 除了上述路径，其余均需要鉴权后才能访问

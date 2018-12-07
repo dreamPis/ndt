@@ -125,6 +125,18 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
+        <!--JNA-->
+        <dependency>
+            <groupId>net.java.dev.jna</groupId>
+            <artifactId>jna</artifactId>
+            <version>5.1.0</version>
+        </dependency>
+        <!--<dependency>
+            <groupId>com.arcsoft.face</groupId>
+            <artifactId>arcsoft-face</artifactId>
+            <version>2.0</version>
+        </dependency>-->
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -153,11 +165,16 @@
     </build>
     <repositories>
         <repository>
-            <id>mvn-repo</id>
+            <id>yonyou-cloud</id>
+            <name>yonyou cloud</name>
+            <url>http://maven.yonyoucloud.com/nexus/content/repositories/releases/</url>
+        </repository>
+        <repository>
+            <id>aliyun-repositor</id>
+            <name>aliyun repositor</name>
             <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
         </repository>
     </repositories>
-
 
 
 </project>

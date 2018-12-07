@@ -50,4 +50,4 @@ logging:
       zaxxer:
         hikari: INFO
 server:
-  port: 8080
+  port: 8787
