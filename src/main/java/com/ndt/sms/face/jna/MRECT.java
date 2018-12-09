@@ -2,7 +2,6 @@ package com.ndt.sms.face.jna;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import org.springframework.security.core.parameters.P;
 
 import java.util.Arrays;
 import java.util.List;
