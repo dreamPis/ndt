@@ -112,6 +112,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
@@ -121,8 +127,10 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
         </dependency>
 
         <!--JNA-->
@@ -161,14 +169,27 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+
+                <configuration>
+                    <url>http://192.168.15.13:8787/manager/text</url>
+                    <username>admin</username>
+                    <password>123456</password>
+                    <update>true</update>
+                    <path>/webapps</path>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <repositories>
-        <repository>
+        <!--<repository>
             <id>yonyou-cloud</id>
             <name>yonyou cloud</name>
             <url>http://maven.yonyoucloud.com/nexus/content/repositories/releases/</url>
-        </repository>
+        </repository>-->
         <repository>
             <id>aliyun-repositor</id>
             <name>aliyun repositor</name>

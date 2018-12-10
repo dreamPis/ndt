@@ -12,7 +12,6 @@ import com.sun.jna.Native;
 public class LoadUtils {
 
     public static <T extends Library> T loadLibrary(String libName, Class<T> interfaceClass){
-        System.load("/Users/ser7en/IdeaProjects/ndt/src/main/resources/" + libName);
         return Native.load(libName, interfaceClass);
     }
 

@@ -36,16 +36,9 @@ spring:
     user:
       name: root
       password: 1234
-  thymeleaf:
-    mode: HTML5
-    encoding: UTF-8
 logging:
   level:
-    root: INFO
-    org:
-      springframework:
-        security: INFO
-        scheduling: INFO
+    root: error,info
     com:
       zaxxer:
         hikari: INFO
