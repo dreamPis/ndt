@@ -37,17 +37,16 @@ public class FaceController {
                 ASF_DETECT.ASF_FACERECOGNITION.getCode() | ASF_DETECT.ASF_GENDER.getCode() |
                 ASF_DETECT.ASF_NONE.getCode();
         ret = FaceEngine.instance.ASFInitEngine(ASF_DETECT_MODE.ASF_DETECT_MODE_IMAGE.getCode(),
-                ArcSoftFace_OrientPriority.ASF_OP_0_HIGHER_EXT.getCode(), 16, 1,
+                ArcSoftFace_OrientPriority.ASF_OP_0_HIGHER_EXT.getCode(), 16, 50,
                 mask, reference);
         if(ret.longValue() != 0){
             log.error("init error..............................");
         }
-        Pointer pointer = reference.getPointer();
+        Pointer pointer = reference.getValue();
         File file;
         int width = -1;
         int height = -1;
-        PointerByReference byReference = new PointerByReference();
-        ASF_MultiFaceInfo faceInfo = new ASF_MultiFaceInfo.ByReference(byReference.getValue());
+        ASF_MultiFaceInfo faceInfo = new ASF_MultiFaceInfo();
         try {
             file = ResourceUtils.getFile("classpath:1.jpg");
             BufferInfo bufferInfo = ImageLoader.getBGRFromFile(file);

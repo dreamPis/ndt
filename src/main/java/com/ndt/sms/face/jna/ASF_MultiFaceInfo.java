@@ -37,6 +37,9 @@ public class ASF_MultiFaceInfo extends Structure {
     public IntByReference faceOrient;// 人脸角度数组
     public int faceNum;// 检测到的人脸个数
 
+    private MRECT[] mrects;
+    private int[] orients;
+
     @Override
     protected List<String> getFieldOrder() {
         return Arrays.asList("faceRect", "faceOrient", "faceNum");
