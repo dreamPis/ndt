@@ -29,7 +29,7 @@ public class EngineTest {
 	@Test
 	public void test() throws IOException {
 		InputStream file1 = getClass().getResourceAsStream("/1.jpg");
-		URL file2 = getClass().getResource("/1.jpg");
+		URL file2 = getClass().getResource("/2.jpg");
 
 		BufferedImage bufferedImage = ImageIO.read(file1);
 		MultiFaceInfo faces = EngineUtil.detectFaces(bufferedImage);
