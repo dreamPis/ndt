@@ -61,8 +61,8 @@ public class EngineUtil {
 	/**
 	 * 将图片的宽度转换为4的整数倍（官方要求，原因尚不清楚）
 	 *
-	 * @param src
-	 *            原图
+	 * @param src 原图
+	 *
 	 * @return 新图
 	 */
 	private static BufferedImage convertImageTo4Times(BufferedImage src) {
@@ -74,10 +74,6 @@ public class EngineUtil {
 
 	/**
 	 * 获取引擎版本信息
-	 *
-	 * @author Jastar Wang
-	 * @date 2018/11/30
-	 * @version 2.0
 	 * @reurn 引擎版本信息
 	 */
 	public static Version getEngineVersion() {
@@ -87,17 +83,14 @@ public class EngineUtil {
 	/**
 	 * 检测多张人脸
 	 *
-	 * @param image
-	 *            图片
-	 * @author Jastar Wang
-	 * @date 2018/11/30
-	 * @version 2.0
+	 * @param image 图片
+	 *
 	 */
 	public static MultiFaceInfo detectFaces(BufferedImage image) {
 		MultiFaceInfo detectFaces = new MultiFaceInfo();
 		image = convertImageTo4Times(image);
 		BufferInfo bufferInfo = ImageLoader.getBGRFromFile(image);
-		getInstance().ASFDetectFaces(phEngine.getValue(), image.getWidth(), image.getHeight(),
+		NativeLong ret = getInstance().ASFDetectFaces(phEngine.getValue(), image.getWidth(), image.getHeight(),
 				ColorFormat.ASVL_PAF_RGB24_B8G8R8, bufferInfo.buffer, detectFaces);
 
 		if (detectFaces.haveFace()) {
@@ -119,16 +112,12 @@ public class EngineUtil {
 	 *            单人脸信息
 	 * @param image
 	 *            图片
-	 * @return 特征值对象
-	 * @author Jastar Wang
-	 * @date 2018/11/30
-	 * @version 2.0
 	 */
 	public static FaceFeature extractFeature(SingleFaceInfo faceInfo, BufferedImage image) {
 		FaceFeature feature = new FaceFeature();
 		image = convertImageTo4Times(image);
 		BufferInfo bufferInfo = ImageLoader.getBGRFromFile(image);
-		getInstance().ASFFaceFeatureExtract(phEngine.getValue(), image.getWidth(), image.getHeight(),
+		NativeLong ret = getInstance().ASFFaceFeatureExtract(phEngine.getValue(), image.getWidth(), image.getHeight(),
 				ColorFormat.ASVL_PAF_RGB24_B8G8R8, bufferInfo.buffer, faceInfo, feature);
 		if (feature.getFeatureData() != null && feature.getFeatureData().length > 0) {
 			// 注意此处返回的时候重新new了一个新的FaceFeature，此处的目的是对FaceFeature做深度Copy，因为虹软对内存做了一些优化，FaceFeature的内存会被重复使用，如果不做深度copy，反复调用该方法，FaceFeature中的特征数据会被覆盖
@@ -145,13 +134,10 @@ public class EngineUtil {
 	 * @param feature2
 	 *            特征值2
 	 * @return 相似度（置信度）
-	 * @author Jastar Wang
-	 * @date 2018/11/30
-	 * @version 2.0
 	 */
 	public static float compareFeature(FaceFeature feature1, FaceFeature feature2) {
 		FloatByReference similar = new FloatByReference();
-		getInstance().ASFFaceFeatureCompare(phEngine.getValue(), feature1, feature2, similar);
+		NativeLong ret = getInstance().ASFFaceFeatureCompare(phEngine.getValue(), feature1, feature2, similar);
 		return similar.getValue();
 	}
 
