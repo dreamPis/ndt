@@ -19,10 +19,6 @@ import org.junit.Test;
 
 /**
  * SDK 测试入口类
- *
- * @author Jastar·Wang
- * @version 1.0
- * @date 2018/12/4
  */
 public class EngineTest {
 

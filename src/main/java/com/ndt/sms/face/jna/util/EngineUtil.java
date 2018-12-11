@@ -16,10 +16,6 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * 引擎入口工具类
- *
- * @author Jastar·Wang
- * @version 2.0
- * @date 2018/11/30
  */
 @Slf4j
 public class EngineUtil {

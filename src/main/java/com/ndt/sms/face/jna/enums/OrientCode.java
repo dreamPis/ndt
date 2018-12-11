@@ -3,11 +3,6 @@ package com.ndt.sms.face.jna.enums;
 /**
  *
  * 定义检测结果中的人脸角度
- *
- * @author Jastar·Wang
- * @email jastar_wang@163.com
- * @date 2018-12-05
- * @since 2.0
  */
 public interface OrientCode {
 	int AFD_FSDK_FOC_0 = 0x1;// 0 degree

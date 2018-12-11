@@ -11,11 +11,6 @@ import lombok.ToString;
 
 /**
  * 人脸特征值
- *
- * @author Jastar·Wang
- * @email jastar_wang@163.com
- * @date 2018-12-05
- * @since 2.0
  */
 @ToString
 public class FaceFeature extends Structure {

@@ -2,11 +2,6 @@ package com.ndt.sms.face.jna.enums;
 
 /**
  * SDK功能常量
- *
- * @author Jastar·Wang
- * @email jastar_wang@163.com
- * @date 2018-12-4
- * @since 2.0
  */
 public interface Mask {
 	int ASF_NONE = 0x00000000;

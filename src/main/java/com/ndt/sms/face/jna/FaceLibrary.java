@@ -10,11 +10,6 @@ import com.sun.jna.ptr.PointerByReference;
 
 /**
  * ArcFace SDK 核心类库
- *
- * @author Jastar·Wang
- * @date 2018-12-05
- * @since 2.0
- * @license <a href="https://mit-license.org/">MIT</a>
  */
 public interface FaceLibrary extends Library {
 
