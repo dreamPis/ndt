@@ -43,9 +43,9 @@ http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227413/index.m3u8
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227411/index.m3u8
 #EXTINF:-1 tvg-id="2057" tvg-name="SCTV5" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/sctv5.png" group-title="四川",SCTV-5高清
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227409/index.m3u8
-#EXTINF:-1 tvg-id="2058" tvg-name="SCTV6" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/sctv7.png" group-title="四川",SCTV-6高清
+#EXTINF:-1 tvg-id="2059" tvg-name="SCTV7" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/sctv7.png" group-title="四川",SCTV-6高清
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227407/index.m3u8
-#EXTINF:-1 tvg-id="2059" tvg-name="SCTV7" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/sctv7.png" group-title="四川",SCTV-7高清
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/sctv7.png" group-title="四川",SCTV-7高清
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227405/index.m3u8
 #EXTINF:-1 tvg-id="2062" tvg-name="SCTV8" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/sctv8.png" group-title="四川",SCTV-科教高清
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227936/index.m3u8
@@ -55,19 +55,19 @@ http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227403/index.m3u8
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227942/index.m3u8
 #EXTINF:-1 tvg-id="70" tvg-name="康巴卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/kangba.png" group-title="卫视",康巴卫视高清
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227629/index.m3u8
-#EXTINF:-1 ,CDTV-1高清
+#EXTINF:-1 tvg-id="2064" tvg-name="CDTV1" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/cdtv1.png" group-title="四川",CDTV-1高清
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227495/index.m3u8
-#EXTINF:-1 ,CDTV-5高清
+#EXTINF:-1 tvg-id="2068" tvg-name="CDTV5" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/cdtv5.png" group-title="四川",CDTV-5高清
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227587/index.m3u8
-#EXTINF:-1 ,CDTV-2
+#EXTINF:-1 tvg-id="2065" tvg-name="CDTV2" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/cdtv2.png" group-title="四川",CDTV-2
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227591/index.m3u8
-#EXTINF:-1 ,CDTV-3
+#EXTINF:-1 tvg-id="2066" tvg-name="CDTV3" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/cdtv3.png" group-title="四川",CDTV-3
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227497/index.m3u8
-#EXTINF:-1 ,CDTV-4
+#EXTINF:-1 tvg-id="2067" tvg-name="CDTV4" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/cdtv4.png" group-title="四川",CDTV-4
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227593/index.m3u8
-#EXTINF:-1 ,CDTV-6
+#EXTINF:-1 tvg-id="2069" tvg-name="CDTV6" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/cdtv6.png" group-title="四川",CDTV-6
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227597/index.m3u8
-#EXTINF:-1 ,CDTV-8高清
+#EXTINF:-1 tvg-id="" tvg-name="CDTV-8高清" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/cdtv6.png" group-title="四川",CDTV-8高清
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227920/index.m3u8
 #EXTINF:-1 tvg-id="27" tvg-name="湖南卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/hunan.png" group-title="央视",湖南卫视高清
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227369/index.m3u8
@@ -143,11 +143,11 @@ http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227181/index.m3u8
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227139/index.m3u8
 #EXTINF:-1 tvg-id="71" tvg-name="西藏卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xizang.png" group-title="卫视",西藏卫视
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227131/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="安多卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xizang.png" group-title="西藏",安多卫视
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xizang.png" group-title="西藏",安多卫视
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227121/index.m3u8
 #EXTINF:-1 tvg-id="61" tvg-name="兵团卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/bingtuan.png" group-title="卫视",兵团卫视
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227934/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="西藏藏语频道" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xizang.png" group-title="西藏",西藏藏语频道
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xizang.png" group-title="西藏",西藏藏语频道
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227129/index.m3u8
 #EXTINF:-1 tvg-id="69" tvg-name="金鹰卡通" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/jinyingkatong.png" group-title="卫视",金鹰卡通
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227149/index.m3u8
