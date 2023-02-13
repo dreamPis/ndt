@@ -43,15 +43,15 @@ http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227413/index.m3u8
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227411/index.m3u8
 #EXTINF:-1 tvg-id="2057" tvg-name="SCTV5" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/sctv5.png" group-title="四川",SCTV-5高清
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227409/index.m3u8
-#EXTINF:-1 tvg-id="2059" tvg-name="SCTV7" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/sctv7.png" group-title="四川",SCTV-6高清
+#EXTINF:-1 tvg-id="2058" tvg-name="SCTV6" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/sctv7.png" group-title="四川",SCTV-6高清
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227407/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",SCTV-7高清
+#EXTINF:-1 tvg-id="2059" tvg-name="SCTV7" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/sctv7.png" group-title="四川",SCTV-7高清
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227405/index.m3u8
 #EXTINF:-1 tvg-id="2062" tvg-name="SCTV8" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/sctv8.png" group-title="四川",SCTV-科教高清
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227936/index.m3u8
 #EXTINF:-1 tvg-id="2061" tvg-name="SCTV9" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/sctv9.png" group-title="四川",SCTV-9高清
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227403/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",峨眉电影高清
+#EXTINF:-1 tvg-id="2060" tvg-name="峨嵋电影" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/emeidianying.png" group-title="四川",峨嵋电影高清
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227942/index.m3u8
 #EXTINF:-1 tvg-id="70" tvg-name="康巴卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/kangba.png" group-title="卫视",康巴卫视高清
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227629/index.m3u8
@@ -103,11 +103,11 @@ http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227937/index.m3u8
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227349/index.m3u8
 #EXTINF:-1 tvg-id="2025" tvg-name="金鹰纪实" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/jinyingjishi.png" group-title="地方",金鹰纪实高清
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227371/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",中国教育频道
+#EXTINF:-1 tvg-id="73" tvg-name="中国教育1台" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/中国教育1台.png" group-title="卫视",中国教育1台
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227339/index.m3u8
 #EXTINF:-1 tvg-id="20" tvg-name="CGTN" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/cgtn.png" group-title="央视",CGTN
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227391/index.m3u8
-#EXTINF:-1 tvg-id="68" tvg-name="厦门卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xiamen.png" group-title="北京",厦门卫视
+#EXTINF:-1 tvg-id="68" tvg-name="厦门卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xiamen.png" group-title="卫视",厦门卫视
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227938/index.m3u8
 #EXTINF:-1 tvg-id="72" tvg-name="三沙卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/sansha.png" group-title="卫视",三沙卫视
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227943/index.m3u8
@@ -129,19 +129,19 @@ http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227181/index.m3u8
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227139/index.m3u8
 #EXTINF:-1 tvg-id="71" tvg-name="西藏卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xizang.png" group-title="卫视",西藏卫视
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227131/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",安多卫视
+#EXTINF:-1 tvg-id="" tvg-name="安多卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xizang.png" group-title="西藏",安多卫视
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227121/index.m3u8
 #EXTINF:-1 tvg-id="61" tvg-name="兵团卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/bingtuan.png" group-title="卫视",兵团卫视
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227934/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",西藏藏语频道
+#EXTINF:-1 tvg-id="" tvg-name="西藏藏语频道" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xizang.png" group-title="西藏",西藏藏语频道
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227129/index.m3u8
 #EXTINF:-1 tvg-id="69" tvg-name="金鹰卡通" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/jinyingkatong.png" group-title="卫视",金鹰卡通
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227149/index.m3u8
 #EXTINF:-1 tvg-id="67" tvg-name="卡酷动画" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/kaku.png" group-title="卫视",卡酷动画
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227189/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",CETV-2
+#EXTINF:-1 tvg-id="74" tvg-name="中国教育2台" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/中国教育2台.png" group-title="地方",中国教育2台
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227940/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",CETV-4
+#EXTINF:-1 tvg-id="75" tvg-name="中国教育3台" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/中国教育3台.png" group-title="地方",中国教育3台
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227337/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",山东教育
+#EXTINF:-1 tvg-id="1434" tvg-name="山东生活" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/sd_shenghuo.png" group-title="地方",山东生活
 http://sc.rrs.169ol.com:80/PLTV/88888888/224/3221227945/index.m3u8
