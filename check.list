@@ -1,5 +1,10 @@
 DOMAIN,v4.plex.tv
 
+DOMAIN-SUFFIX,ptchdbits.co
+DOMAIN-SUFFIX,hddolby.com
+DOMAIN-SUFFIX,m-team.cc
+DOMAIN-SUFFIX,hdfans.org
+
 DOMAIN-SUFFIX,vultr.com
 DOMAIN-SUFFIX,test-ipv6.com
 DOMAIN-SUFFIX,ipw.cn
