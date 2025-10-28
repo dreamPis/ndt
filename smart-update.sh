@@ -47,6 +47,18 @@ fi
 version=$(echo "$version" | tr -d ' \r\n')
 log "获取的版本号为: $version"
 
+# ===== 检查本地版本号 =====
+if command -v mihomo >/dev/null 2>&1; then
+    local_ver=$(mihomo -v 2>/dev/null | awk '{print $4}')
+    log "检测到本地 Mihomo 版本: $local_ver"
+    if [ "$local_ver" = "$version" ]; then
+        log "✅ 本地内核版本 ($local_ver) 已是最新，无需更新。"
+        exit 0
+    fi
+else
+    log "⚠️ 未检测到本地 mihomo 可执行文件，将继续执行更新。"
+fi
+
 # ===== 架构检测（尽可能自动） =====
 arch="$(uname -m)"
 case "$arch" in
