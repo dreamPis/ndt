@@ -49,7 +49,7 @@ log "获取的版本号为: $version"
 
 # ===== 检查本地版本号 =====
 if command -v mihomo >/dev/null 2>&1; then
-    local_ver=$(mihomo -v 2>/dev/null | awk '{print $3}')
+    local_ver=$(mihomo -v 2>/dev/null | awk '{print $3}' | sed -E 's/(with_|_with).*//')
     log "检测到本地 Mihomo 版本: $local_ver"
     if [ "$local_ver" = "$version" ]; then
         log "✅ 本地内核版本 ($local_ver) 已是最新，无需更新。"
