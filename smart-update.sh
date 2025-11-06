@@ -7,8 +7,7 @@ LOG_DIR="/var/log/nikki_update"
 LOG_FILE="$LOG_DIR/update_$(date '+%Y-%m-%d_%H-%M-%S').log"
 BACKUP_DIR="/root/nikki_backup"
 VERSION_URL="https://github.com/vernesong/mihomo/releases/download/Prerelease-Alpha/version.txt"
-DOWNLOAD_TEMPLATE_AMD64="https://github.com/vernesong/mihomo/releases/download/Prerelease-Alpha/mihomo-linux-amd64-compatible-%s.gz"
-DOWNLOAD_TEMPLATE_ARM64="https://github.com/vernesong/mihomo/releases/download/Prerelease-Alpha/mihomo-linux-arm64-compatible-%s.gz"
+DOWNLOAD_TEMPLATE_AMD64="https://github.com/vernesong/mihomo/releases/download/Prerelease-Alpha/mihomo-linux-amd64-v2-%s.gz"
 TARGET_BIN="/usr/bin/mihomo"
 SERVICE_NAME="nikki"   # systemd unit 名称或 init 脚本名
 RETRY=3
@@ -63,7 +62,6 @@ fi
 arch="$(uname -m)"
 case "$arch" in
     x86_64|amd64) dl_template="$DOWNLOAD_TEMPLATE_AMD64"; bin_name="mihomo-linux-amd64" ;;
-    aarch64|arm64) dl_template="$DOWNLOAD_TEMPLATE_ARM64"; bin_name="mihomo-linux-arm64" ;;
     *)
         log "⚠️ 无法自动识别架构 ($arch)，默认使用 amd64 模板"
         dl_template="$DOWNLOAD_TEMPLATE_AMD64"; bin_name="mihomo-linux-amd64"
