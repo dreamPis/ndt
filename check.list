@@ -13,7 +13,7 @@ DOMAIN-SUFFIX,ipw.cn
 
 DOMAIN-SUFFIX,ipcheck.im
 
-DOMAIN,speed.cloudflare.com
+DOMAIN-SUFFIX,cloudflare.com
 DOMAIN-SUFFIX,fast.com
 # DOMAIN,ichnaea-web.netflix.com
 # DOMAIN-SUFFIX,1.oca.nflxvideo.net
@@ -59,3 +59,4 @@ DOMAIN-SUFFIX,ping0.cc
 DOMAIN-SUFFIX,incolumitas.com
 DOMAIN-SUFFIX,incolumitas.com
 DOMAIN-SUFFIX,incolumitas.com
+
