@@ -6,10 +6,10 @@
 
 [Script]
 # 手动触发检测
-claude-code-ip-check = type=generic,script-path=https://raw.githubusercontent.com/local/surge-scripts/main/claude-ip-check.js,argument=manual,timeout=30,tag=Claude Code IP 检测
+claude-code-ip-check = type=generic,script-path=https://raw.githubusercontent.com/dreamPis/ndt/refs/heads/master/claude-ip-check.js,argument=manual,timeout=30,tag=Claude Code IP 检测
 
 # 自动检测（每次连接 Claude API 时触发）
-claude-code-api-check = type=http-request,pattern=^https://api\.anthropic\.com,script-path=https://raw.githubusercontent.com/local/surge-scripts/main/claude-ip-check.js,requires-body=false,timeout=10,tag=Claude API 请求监控
+claude-code-api-check = type=http-request,pattern=^https://api\.anthropic\.com,script-path=https://raw.githubusercontent.com/dreamPis/ndt/refs/heads/master/claude-ip-check.js,requires-body=false,timeout=10,tag=Claude API 请求监控
 
 [Panel]
 claude-ip-panel = script-name=claude-code-ip-check,title=🔍 Claude Code IP 检测,content=点击刷新检测,style=info
